@@ -22,6 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Frederik Barbré - Portfolio</title>
+        <meta
+          name="theme-color"
+          content={theme === "light" ? "#FFFFFF" : "#0E0E0E"}
+        />
       </head>
       <body
         className={`${barlow.className} ${
