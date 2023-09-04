@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
-import './globals.css';
-import { Barlow } from 'next/font/google';
-import { useStore } from './store';
+import "./globals.css";
+import { Barlow } from "next/font/google";
+import { useStore } from "./store";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export default function RootLayout({
@@ -23,12 +25,14 @@ export default function RootLayout({
       </head>
       <body
         className={`${barlow.className} ${
-          theme === 'light'
-            ? 'text-near-black bg-white'
-            : 'bg-near-black text-white'
-        }`}
+          theme === "light"
+            ? "text-near-black bg-white"
+            : "bg-near-black text-white"
+        } transition-colors`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

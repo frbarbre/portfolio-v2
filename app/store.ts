@@ -1,14 +1,15 @@
-'use client';
+"use client";
 
-import { createWithEqualityFn } from 'zustand/traditional';
+import { createWithEqualityFn } from "zustand/traditional";
 
-let language: string | null;
-let theme: string | null;
+let languageStorage: string | null;
+let themeStorage: string | null;
 
-if (typeof window !== 'undefined') {
-  language = localStorage.getItem('houseDecider');
-  theme = localStorage.getItem('userChoice');
+if (typeof window !== "undefined") {
+  languageStorage = localStorage.getItem("language");
+  themeStorage = localStorage.getItem("theme");
 }
+
 
 interface Store {
   language: string;
@@ -20,10 +21,10 @@ interface Store {
 
 export const useStore = createWithEqualityFn<Store>()(
   (set) => ({
-    language: language || 'en',
+    language: languageStorage || "en",
     setLanguage: (language) => set(() => ({ language: language })),
 
-    theme: theme || 'dark',
+    theme: "dark",
     setTheme: (theme) => set(() => ({ theme: theme })),
   }),
   Object.is
