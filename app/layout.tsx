@@ -31,7 +31,7 @@ export default function RootLayout({
         } transition-colors`}
       >
         <Navbar />
-        {children}
+        <main className="pt-[77px]">{children}</main>
         <Footer />
       </body>
     </html>
