@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 import MenuToggle from "./MenuToggle";
 import NavMenu from "./NavMenu";
 import { motion as m, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const theme = useStore((state) => state.theme);
@@ -18,9 +19,13 @@ export default function Navbar() {
           theme === "light" ? "border-b-black/20" : "border-b-white/20"
         }`}
       >
-        <h2 className="hidden md:block font-bold text-[22px] tracking-[1.32px]">
+        <Link
+          href={"/"}
+          onClick={() => setIsActive(false)}
+          className="hidden md:block font-bold text-[22px] tracking-[1.32px]"
+        >
           FREDERIK BARBRÉ
-        </h2>
+        </Link>
         <MenuToggle isActive={isActive} setIsActive={setIsActive} />
         <ThemeToggle />
 
