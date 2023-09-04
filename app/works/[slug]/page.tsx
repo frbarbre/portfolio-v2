@@ -1,11 +1,9 @@
-import { Project } from "@/types";
+import { fetchProjects } from "@/utils/fetchProjects";
 
 export default async function Work({ params }: { params: { slug: string } }) {
-  const data = await fetch(
-    "https://wp.frederikbarbre.dk/wp-json/wp/v2/posts?per_page=41",
-    { cache: "no-store" }
-  );
-  const projects = (await data.json()) as Project[];
+  
+  const projects = await fetchProjects();
+  
   const currentProject = projects.find(
     (project) => project.acf.slug === params.slug
   );

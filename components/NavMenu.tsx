@@ -40,6 +40,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                     transition: { delay: index * 0.05 },
                   }}
                   transition={{ delay: index * 0.15 + 0.45 }}
+                  key={link.title}
                 >
                   <Link
                     href={link.path}

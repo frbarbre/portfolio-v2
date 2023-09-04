@@ -20,6 +20,12 @@ const config: Config = {
         md: "815px",
         lg: "1330px",
       },
+      backgroundImage: {
+        hero: "url('/images/hero.png')",
+      },
+      minHeight: {
+        hero: "calc(100svh - 77px)",
+      },
     },
   },
   plugins: [],
