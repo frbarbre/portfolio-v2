@@ -34,8 +34,12 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                 <m.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{delay: index * 0.2}}
+                  exit={{
+                    opacity: 0,
+                    y: -20,
+                    transition: { delay: index * 0.05 },
+                  }}
+                  transition={{ delay: index * 0.15 + 0.45 }}
                 >
                   <Link
                     href={link.path}
@@ -73,7 +77,9 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                   src={activeLink?.image || ""}
                   alt={activeLink?.title || ""}
                   fill
-                  className={`rounded-[10px] border-[2px] ${theme === "light" ? "border-black/20" : "border-white/20"}`}
+                  className={`rounded-[10px] border-[2px] ${
+                    theme === "light" ? "border-black/20" : "border-white/20"
+                  }`}
                 />
               )}
             </div>
