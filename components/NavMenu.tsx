@@ -52,8 +52,8 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                               : "text-primary-dark"
                             : activeLink?.path !== link.path
                             ? theme === "light"
-                              ? "blur-[6px] text-near-black"
-                              : "blur-[6px] text-white"
+                              ? "md:blur-[6px] text-near-black"
+                              : "md:blur-[6px] text-white"
                             : ""
                           : pathname === link.path &&
                             (theme === "light"
