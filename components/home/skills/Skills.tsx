@@ -13,7 +13,7 @@ export default function Skills() {
   return (
     <section className="px-[24px] md:px-[103px] md:py-[100px] py-[50px] md:pb-[100px] flex items-center justify-between gap-16">
       <article>
-        <p className="max-w-[733px] text-[18px] tracking-[1.08px]">
+        <p className="max-w-[733px] text-[18px] tracking-[1.08px] text-center md:text-left">
           <SkillsText language={language} theme={theme} />
         </p>
         <SkillIcons />

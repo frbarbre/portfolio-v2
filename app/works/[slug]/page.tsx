@@ -1,9 +1,7 @@
-import { fetchProjects } from "@/utils/fetchProjects";
+import { fetchProjects } from '@/utils/fetchProjects';
 
 export default async function Work({ params }: { params: { slug: string } }) {
-  
   const projects = await fetchProjects();
-  
   const currentProject = projects.find(
     (project) => project.acf.slug === params.slug
   );

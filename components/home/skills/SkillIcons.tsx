@@ -9,14 +9,14 @@ export default function SkillIcons() {
   const [isMouseOver, setIsMouseOver] = useState('');
 
   return (
-    <section className="flex flex-wrap translate-x-[-12px] pt-[18px]">
+    <section className="flex flex-wrap justify-center md:justify-start md:translate-x-[-12px] pt-[18px]">
       {featuredSkills.map((skill) => (
         <div
           onMouseEnter={() => setIsMouseOver(skill.title)}
           onMouseLeave={() => setIsMouseOver('')}
           key={skill.id}
         >
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Magnetic>
               <Icon
                 icon={skill.icon}
@@ -26,7 +26,7 @@ export default function SkillIcons() {
               />
             </Magnetic>
           </div>
-          <div className="md:hidden p-[12px] relative">
+          <div className="lg:hidden p-[12px] relative">
             <Icon icon={skill.icon} name={skill.title} link={skill.link} />
           </div>
         </div>

@@ -6,7 +6,7 @@ export const navLinks = [
       en: 'Home',
       da: 'Hjem',
     },
-    path: '/',
+    path: '',
     image: '/images/nav-home.png',
   },
   {
@@ -14,7 +14,7 @@ export const navLinks = [
       en: 'Contact',
       da: 'Kontakt',
     },
-    path: '/contact',
+    path: 'contact',
     image: '/images/nav-contact.png',
   },
   {
@@ -22,7 +22,7 @@ export const navLinks = [
       en: 'Works',
       da: 'Arbejde',
     },
-    path: '/works',
+    path: 'works',
     image: '/images/nav-works.png',
   },
   {
@@ -30,7 +30,7 @@ export const navLinks = [
       en: 'About',
       da: 'Om Mig',
     },
-    path: '/about',
+    path: 'about',
     image: '/images/nav-about.png',
   },
 ];
@@ -43,6 +43,13 @@ export const skillsText = {
 
 export const skills = [
   {
+    title: 'Next.JS',
+    icon: '/tools/next.svg',
+    id: Tools.next,
+    link: 'https://nextjs.org/',
+    isFeatured: true,
+  },
+  {
     title: 'React',
     icon: '/tools/react.svg',
     id: Tools.react,
@@ -50,10 +57,17 @@ export const skills = [
     isFeatured: true,
   },
   {
-    title: 'Next.JS',
-    icon: '/tools/next.svg',
-    id: Tools.next,
-    link: 'https://nextjs.org/',
+    title: 'Svelte',
+    icon: '/tools/svelte.svg',
+    id: Tools.svelte,
+    link: 'https://svelte.dev/',
+    isFeatured: true,
+  },
+  {
+    title: 'Astro',
+    icon: '/tools/astro.svg',
+    id: Tools.astro,
+    link: 'https://astro.build/',
     isFeatured: true,
   },
   {
@@ -69,13 +83,6 @@ export const skills = [
     id: Tools.javascript,
     link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     isFeatured: false,
-  },
-  {
-    title: 'Astro',
-    icon: '/tools/astro.svg',
-    id: Tools.astro,
-    link: 'https://astro.build/',
-    isFeatured: true,
   },
   {
     title: 'Clerk',
@@ -97,13 +104,6 @@ export const skills = [
     id: Tools.scss,
     link: 'https://sass-lang.com/',
     isFeatured: false,
-  },
-  {
-    title: 'Framer Motion',
-    icon: '/tools/framer-motion.svg',
-    id: Tools.framermotion,
-    link: 'https://www.framer.com/motion/',
-    isFeatured: true,
   },
   {
     title: 'GSAP',
@@ -134,17 +134,17 @@ export const skills = [
     isFeatured: false,
   },
   {
-    title: 'Svelte',
-    icon: '/tools/svelte.svg',
-    id: Tools.svelte,
-    link: 'https://svelte.dev/',
-    isFeatured: true,
-  },
-  {
     title: 'Zustand',
     icon: '/tools/zustand.svg',
     id: Tools.zustand,
     link: 'https://zustand.surge.sh/',
+    isFeatured: true,
+  },
+  {
+    title: 'Framer Motion',
+    icon: '/tools/framer-motion.svg',
+    id: Tools.framermotion,
+    link: 'https://www.framer.com/motion/',
     isFeatured: true,
   },
 ];
