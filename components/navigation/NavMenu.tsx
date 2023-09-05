@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useStore } from "@/app/store";
 
 interface Props {
   isActive: boolean;
@@ -13,8 +14,9 @@ interface Props {
 
 export default function NavMenu({ isActive, setIsActive, theme }: Props) {
   const [isMouseOver, setIsMouseOver] = useState("");
-  const activeLink = navLinks.find((link) => link.title === isMouseOver);
+  const activeLink = navLinks.find((link) => link.title.en === isMouseOver);
   const pathname = usePathname();
+  const language = useStore((state) => state.language);
 
   return (
     <>
@@ -40,12 +42,12 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                     transition: { delay: index * 0.05 },
                   }}
                   transition={{ delay: index * 0.15 + 0.45 }}
-                  key={link.title}
+                  key={link.title.en}
                 >
                   <Link
                     href={link.path}
                     onClick={() => setIsActive(false)}
-                    onMouseEnter={() => setIsMouseOver(link.title)}
+                    onMouseEnter={() => setIsMouseOver(link.title.en)}
                     onMouseLeave={() => setIsMouseOver("")}
                   >
                     <m.h2
@@ -66,7 +68,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                               : "text-primary-dark")
                       } transition-all duration-[500ms] md:text-[96px] text-[42px] tracking-[2.52px] font-bold uppercase md:tracking-[5.8px]`}
                     >
-                      {link.title}
+                      {language === "en" ? link.title.en : link.title.da}
                     </m.h2>
                   </Link>
                 </m.div>
@@ -76,7 +78,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
               {isMouseOver !== "" && (
                 <Image
                   src={activeLink?.image || ""}
-                  alt={activeLink?.title || ""}
+                  alt={activeLink?.title.en || ""}
                   fill
                   className={`rounded-[10px] border-[2px] ${
                     theme === "light" ? "border-black/20" : "border-white/20"

@@ -1,6 +1,6 @@
 import { Project } from "@/types";
 
-export function sortArray(arr: Project[]) {
+export function sortProjects(arr: Project[]) {
   arr.sort((a, b) => {
     if (a.acf.createdat < b.acf.createdat) {
       return 1;

@@ -1,13 +1,13 @@
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
+import Hero from '@/components/home/hero/Hero';
+import FeaturedProjects from '@/components/home/featured/FeaturedProjects';
+import Skills from '@/components/home/skills/Skills';
 
 export default function Home() {
   return (
     <section>
       <Hero />
       <Skills />
-      <Projects />
+      <FeaturedProjects />
     </section>
   );
 }

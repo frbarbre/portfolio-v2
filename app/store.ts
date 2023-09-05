@@ -2,14 +2,10 @@
 
 import { createWithEqualityFn } from "zustand/traditional";
 
-let languageStorage: string | null;
-let themeStorage: string | null;
-
 if (typeof window !== "undefined") {
-  languageStorage = localStorage.getItem("language");
-  themeStorage = localStorage.getItem("theme");
+  const languageStorage = localStorage.getItem("language");
+  const themeStorage = localStorage.getItem("theme");
 }
-
 
 interface Store {
   language: string;
@@ -21,7 +17,7 @@ interface Store {
 
 export const useStore = createWithEqualityFn<Store>()(
   (set) => ({
-    language: languageStorage || "en",
+    language: "en",
     setLanguage: (language) => set(() => ({ language: language })),
 
     theme: "dark",
