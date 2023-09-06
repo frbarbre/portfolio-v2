@@ -12,7 +12,7 @@ export default function HeroText({
 
   return (
     <p
-      className={`m-0 text-white md:text-[140px] font-bold pr-[50px] tracking-[4.8px] md:tracking-[8.4px] text-[80px] ${
+      className={`m-0 text-white md:text-[140px] font-bold pr-[30px] tracking-[4.8px] md:tracking-[8.4px] text-[80px] ${
         isSecondText && 'absolute left-[100%] top-0'
       }`}
       ref={reference}

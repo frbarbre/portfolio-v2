@@ -7,10 +7,14 @@ import Modal from "./Modal";
 import StaticProjectCard from "./StaticProjectCard";
 import { usePathname } from "next/navigation";
 import { useStore } from "@/app/store";
+import Link from "next/link";
+import SquareButton from "./SquareButton";
+import Magnetic from "./Magnetic";
 
 export default function Projects({ projects }: { projects: Project[] }) {
   const [modal, setModal] = useState({ active: false, index: 0 });
   const theme = useStore((state) => state.theme);
+  const language = useStore((state) => state.language);
   const pathname = usePathname();
 
   return (
@@ -21,7 +25,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
             theme === "light" ? "text-primary-light" : "text-primary-dark"
           } font-bold text-[20px] uppercase tracking-[1.2px] pl-[24px] pb-[30px] md:pl-[103px] md:pb-[50px]`}
         >
-          Featured Work
+          {language === "en" ? "Featured Work" : "Udvalgte Projekter"}
         </h2>
       )}
       <div className="flex-col items-center hidden lg:flex justify-center px-[103px]">
@@ -52,6 +56,28 @@ export default function Projects({ projects }: { projects: Project[] }) {
         ))}
       </div>
       <Modal modal={modal} projects={projects} />
+
+      {pathname === "/" && (
+        <>
+          <div className="hidden mt-[46px] mb-[100px] max-w-[254px] mx-auto lg:block">
+            <Magnetic>
+              <Link href={"/works"} className="w-full block">
+                <SquareButton
+                  enText="Show All"
+                  daText="Se Alle"
+                  variant="std"
+                />
+              </Link>
+            </Magnetic>
+          </div>
+
+          <div className="lg:hidden mt-[49px] mb-[100px] max-w-[254px] mx-auto">
+            <Link href={"/works"} className="w-full block">
+              <SquareButton enText="Show All" daText="Se Alle" variant="std" />
+            </Link>
+          </div>
+        </>
+      )}
     </>
   );
 }

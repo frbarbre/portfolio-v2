@@ -18,8 +18,8 @@ export default function Icon({ link, icon, name, size, isMouseOver }: Props) {
       <Image
         src={icon}
         alt={name}
-        width={100}
-        height={100}
+        width={200}
+        height={200}
         className={`${
           size || 'w-[45px] md:w-[65px]'
         } aspect-square relative z-[-1]`}

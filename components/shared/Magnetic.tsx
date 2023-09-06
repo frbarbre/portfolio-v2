@@ -21,7 +21,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
   const { x, y } = position;
   return (
     <motion.div
-      className='relative w-max p-[12px]'
+      className='relative w-full p-[12px]'
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}

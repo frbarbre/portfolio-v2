@@ -40,7 +40,7 @@ export default function Navbar() {
             exit={{ scaleY: 0 }}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
             onClick={() => setIsActive(false)}
-            className="fixed top-0 left-0 right-0 bottom-0 bg-black/50 z-0"
+            className="fixed top-0 left-0 right-0 bottom-0 bg-black/50 z-20"
           ></m.div>
         )}
       </AnimatePresence>

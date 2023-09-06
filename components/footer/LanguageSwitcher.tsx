@@ -61,8 +61,8 @@ export function LanguageSwitch({
             ? 'text-primary-light'
             : 'text-primary-dark'
           : theme === 'light'
-          ? 'text-black/50'
-          : 'text-white/50'
+          ? 'text-black/50 hover:text-primary-light/50'
+          : 'text-white/50 hover:text-primary-dark/50'
       } transition-colors uppercase`}
     >
       {lang}

@@ -7,5 +7,9 @@ export default async function FeaturedProjects() {
   const featuredProject = projects.filter((project) => project.acf.isFeatured);
   sortProjects(featuredProject);
 
-  return <Projects projects={featuredProject} />;
+  return (
+    <>
+      <Projects projects={featuredProject} />
+    </>
+  );
 }

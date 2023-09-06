@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function NavMenu({ isActive, setIsActive, theme }: Props) {
-  const [isMouseOver, setIsMouseOver] = useState('');
+  const [isMouseOver, setIsMouseOver] = useState('About');
   const activeLink = navLinks.find((link) => link.title.en === isMouseOver);
   const pathname = usePathname();
   const language = useStore((state) => state.language);
@@ -31,7 +31,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
               theme === 'light' ? 'border-b-black/20' : 'border-b-white/20'
             }`}
           >
-            <nav className="flex flex-wrap lg:max-w-[832px] flex-col md:flex-row md:gap-x-[35px]">
+            <nav className="flex flex-wrap lg:max-w-[880px] flex-col md:flex-row md:gap-x-[35px]">
               {navLinks.map((link, index) => (
                 <m.div
                   initial={{ opacity: 0, y: -20 }}
@@ -68,7 +68,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                             (theme === 'light'
                               ? 'text-primary-light'
                               : 'text-primary-dark')
-                      } transition-all duration-[500ms] md:text-[96px] text-[42px] tracking-[2.52px] font-bold uppercase md:tracking-[5.8px]`}
+                      } transition-all duration-[500ms] md:text-[88px] text-[42px] tracking-[2.52px] font-bold uppercase md:tracking-[5.8px]`}
                     >
                       {language === 'en' ? link.title.en : link.title.da}
                     </m.h2>
