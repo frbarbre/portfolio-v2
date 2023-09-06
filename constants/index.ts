@@ -166,3 +166,30 @@ export const socials = [
     link: "https://www.linkedin.com/in/frbarbre/",
   },
 ];
+
+export const aboutParagraphs = [
+  {
+    en: {
+      title: "",
+      text: "My name is Frederik Barbré, and I am an immensely passionate web designer and frontend developer. <br>My love for design has been a constant thread in my life. I distinctly recall the moment I first delved into Adobe Illustrator, discovering the boundless possibilities that lay right before me. <br>Throughout my educational journey, creativity and ambition have consistently been my focal points. I initially pursued studies in game development before redirecting my path toward the realm of web design. The experience of creating games has endowed me with valuable insights into user behavior, knowledge that continues to underpin my work to this day."
+    },
+    da: {
+      title: "",
+      text: "Mit navn er Frederik Barbré, og jeg er en utroligt passioneret webdesigner og frontend-udvikler. <br>Min kærlighed til design har været en konstant tråd i mit liv. Jeg husker tydeligt det øjeblik, hvor jeg første gang dykkede ned i Adobe Illustrator og opdagede de uendelige muligheder, der lå lige foran mig. <br>Gennem min uddannelsesrejse har kreativitet og ambition konstant været mine fokuspunkter. Jeg begyndte først at studere spiludvikling, før jeg ændrede kurs og gik ind i webdesignens verden. Erfaringen med at skabe spil har forsynet mig med værdifulde indsigter i brugeradfærd, viden der fortsat er grundlaget for mit arbejde den dag i dag."
+    },
+    isReverse: false,
+    image: "/images/about1.png",
+  }, 
+  {
+    en: {
+      title: "My Passions",
+      text: "From the moment I was introduced to HTML & CSS, a profound affection took hold of me. I yearned to absorb every ounce of knowledge, acquaint myself with each intricate detail, and construct the most captivating websites that my imagination could conjure. <br>Since that day, my pace hasn't wavered. I invest multiple hours daily, with a significant portion of my focus directed toward mastering React with Next.js and TypeScript. However, my enthusiasm for learning remains as fervent as ever. I eagerly anticipate the challenges that lie ahead in a professional setting."
+    },
+    da: {
+      title: "Mine Passioner",
+      text: "Fra det øjeblik, jeg blev introduceret til HTML & CSS, tog en dybfølt kærlighed fat i mig. Jeg længtes efter at opsuge hver eneste smule viden, stifte bekendtskab med hver eneste komplekse detalje og skabe de mest fængslende hjemmesider, som min fantasi kunne fremkalde. <br>Siden den dag har mit tempo ikke vaklet. Jeg investerer flere timer dagligt, hvor en betydelig del af min fokus er rettet mod at mestre React med Next.js og TypeScript. Dog forbliver min entusiasme for læring lige så brændende som altid. Jeg ser ivrigt frem til de udfordringer, der venter mig i en professionel sammenhæng."
+    },
+    isReverse: true,
+    image: "/images/about2.png",
+  }, 
+]

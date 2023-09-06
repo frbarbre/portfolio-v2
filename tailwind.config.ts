@@ -26,6 +26,12 @@ const config: Config = {
       minHeight: {
         hero: 'calc(100svh - 77px)',
       },
+      maxWidth: {
+        custom: "1800px"
+      },
+      objectPosition: {
+        about: '90% center',
+      }
     },
   },
   plugins: [],

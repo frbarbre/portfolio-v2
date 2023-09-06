@@ -1,7 +1,9 @@
+import Heading from "@/components/shared/Heading";
+
 export default function Works() {
-    return (
-        <div>
-            <h1>Works</h1>
-        </div>
-    )
+  return (
+    <section>
+      <Heading daText="Projekter" enText="Works" />
+    </section>
+  );
 }

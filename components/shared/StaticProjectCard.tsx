@@ -30,7 +30,7 @@ export default function StaticProjectCard({
             className="mx-auto w-full max-w-[450px]"
           />
         </div>
-        <div className="pt-[13px] flex justify-between">
+        <div className="pt-[13px] flex justify-between items-center">
           <h2 className="text-[21px] font-bold uppercase tracking-[1.674px]">{title}</h2>
           <p className="text-[15.7px] font-semibold tracking-[1.256px]">{year}</p>
         </div>

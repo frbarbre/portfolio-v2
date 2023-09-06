@@ -13,23 +13,33 @@ export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <>
+    <div>
       <header
-        className={`w-full grid grid-cols-2 md:grid-cols-3 items-center px-[29px] py-[22px] transition-colors text-inherit bg-inherit z-50 fixed border-b ${
-          theme === "light" ? "border-b-black/20" : "border-b-white/20"
+        className={`w-full transition-colors text-inherit bg-inherit z-50 fixed border-b  ${
+          theme === "light" ? "border-b-black/20 bg-white" : "border-b-white/20 bg-near-black"
         }`}
       >
-        <Link
-          href={"/"}
-          onClick={() => setIsActive(false)}
-          className="hidden md:block font-bold text-[22px] tracking-[1.32px]"
+        <div
+          className={`max-w-custom mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-[29px] md:px-[103px] py-[22px]`}
         >
-          FREDERIK BARBRÉ
-        </Link>
-        <MenuToggle isActive={isActive} setIsActive={setIsActive} />
-        <ThemeToggle />
+          <div className="hidden md:block">
+            <Link
+              href={"/"}
+              onClick={() => setIsActive(false)}
+              className="font-bold text-[22px] tracking-[1.32px] w-max"
+            >
+              FREDERIK BARBRÉ
+            </Link>
+          </div>
+          <MenuToggle isActive={isActive} setIsActive={setIsActive} />
+          <ThemeToggle />
 
-        <NavMenu isActive={isActive} setIsActive={setIsActive} theme={theme} />
+          <NavMenu
+            isActive={isActive}
+            setIsActive={setIsActive}
+            theme={theme}
+          />
+        </div>
       </header>
 
       <AnimatePresence>
@@ -44,6 +54,6 @@ export default function Navbar() {
           ></m.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

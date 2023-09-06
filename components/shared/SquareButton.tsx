@@ -17,7 +17,7 @@ export default function SquareButton({ daText, enText, variant }: Props) {
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   const stdVariant = "h-[73px] max-w-[236px] tracking-[0.96px] text-[16px]";
-  const longVariant = "h-[73px] tracking-[0.96px] text-[16px]";
+  const longVariant = "h-[59px] tracking-[0.96px] text-[16px]";
   const iconVariant =
     "h-[46px] max-w-[130px] text-[12px] tracking-[0.72px] gap-[12px] md:tracking-[0.96px] md:text-[16px] md:h-[56px] md:max-w-[188px] md:gap-[15px]";
 

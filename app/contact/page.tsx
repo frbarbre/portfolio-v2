@@ -1,7 +1,9 @@
+import Heading from "@/components/shared/Heading";
+
 export default function Contact() {
-    return (
-        <div>
-            <h1>Contact</h1>
-        </div>
-    )
+  return (
+    <section>
+      <Heading daText="Kontakt Mig" enText="Contact Me" />
+    </section>
+  );
 }

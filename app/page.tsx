@@ -1,13 +1,15 @@
-import Hero from '@/components/home/hero/Hero';
-import FeaturedProjects from '@/components/home/featured/FeaturedProjects';
-import Skills from '@/components/home/skills/Skills';
+import Hero from "@/components/home/hero/Hero";
+import FeaturedProjects from "@/components/home/featured/FeaturedProjects";
+import Skills from "@/components/home/skills/Skills";
 
 export default function Home() {
   return (
     <section>
       <Hero />
-      <Skills />
-      <FeaturedProjects />
+      <div className="max-w-custom mx-auto">
+        <Skills />
+        <FeaturedProjects />
+      </div>
     </section>
   );
 }
