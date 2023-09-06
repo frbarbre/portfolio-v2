@@ -112,7 +112,7 @@ export default function Modal({
         ref={cursor}
         className={`w-[80px] h-[80px] rounded-full ${
           theme === 'light' ? 'bg-primary-light' : 'bg-primary-dark'
-        } text-white absolute z-[2] flex items-center justify-center text-[14px] font-regular pointer-events-none`}
+        } text-white absolute z-[30] flex items-center justify-center text-[14px] font-regular pointer-events-none`}
         variants={scaleAnimation}
         initial="initial"
         animate={active ? 'enter' : 'closed'}
@@ -121,7 +121,7 @@ export default function Modal({
         ref={cursorLabel}
         className={`${
           theme === 'light' ? 'text-white' : 'text-near-black'
-        } w-[80px] h-[80px] rounded-full bg-transparent uppercase absolute z-[2] flex items-center justify-center text-[14px] font-medium pointer-events-none`}
+        } w-[80px] h-[80px] rounded-full bg-transparent uppercase absolute z-[30] flex items-center justify-center text-[14px] font-medium pointer-events-none`}
         variants={scaleAnimation}
         initial="initial"
         animate={active ? 'enter' : 'closed'}
