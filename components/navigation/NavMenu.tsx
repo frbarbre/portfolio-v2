@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function NavMenu({ isActive, setIsActive, theme }: Props) {
-  const [isMouseOver, setIsMouseOver] = useState('About');
+  const [isMouseOver, setIsMouseOver] = useState('');
   const activeLink = navLinks.find((link) => link.title.en === isMouseOver);
   const pathname = usePathname();
   const language = useStore((state) => state.language);
@@ -59,8 +59,8 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                               : 'text-primary-dark'
                             : activeLink?.path !== link.path
                             ? theme === 'light'
-                              ? 'md:blur-[6px] text-near-black'
-                              : 'md:blur-[6px] text-white'
+                              ? 'lg:blur-[6px] text-near-black'
+                              : 'lg:blur-[6px] text-white'
                             : ''
                           : (pathname !== '/'
                               ? link.path !== '' && pathname.includes(link.path)

@@ -33,6 +33,22 @@ export default function HeroText({
       >
         -
       </span>{' '}
+      FREDERIK BARBRÉ{' '}
+      <span
+        className={`${
+          theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+        } transition-colors`}
+      >
+        -
+      </span>{' '}
+      FRONTEND {language === 'en' ? 'DEVELOPER' : 'UDVIKLER'}{' '}
+      <span
+        className={`${
+          theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+        } transition-colors`}
+      >
+        -
+      </span>{' '}
     </p>
   );
 }
