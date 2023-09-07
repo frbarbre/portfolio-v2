@@ -1,9 +1,11 @@
-"use client";
+'use client';
 
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import HeroText from "./HeroText";
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import HeroText from './HeroText';
+import heroPic from '../../../public/images/hero.png';
+import Image from 'next/image';
 
 export default function Hero() {
   const firstText = useRef(null);
@@ -22,7 +24,7 @@ export default function Hero() {
         end: window.innerHeight,
         onUpdate: (e) => (direction = e.direction * -1),
       },
-      x: "-500px",
+      x: '-500px',
     });
     requestAnimationFrame(animate);
   }, []);
@@ -38,9 +40,17 @@ export default function Hero() {
     requestAnimationFrame(animate);
     xPercent += 0.03 * direction;
   };
-  
+
   return (
-    <main className="relative flex min-h-hero overflow-hidden bg-hero bg-bottom bg-no-repeat bg-cover z-[-1]">
+    <main className="relative flex min-h-hero overflow-hidden bg-no-repeat bg-cover z-[-1]">
+      <Image
+        src={heroPic}
+        alt="HeroPicture"
+        width={2510}
+        height={1200}
+        placeholder="blur"
+        className="object-cover object-bottom"
+      />
       <div className="absolute bottom-[53px]">
         <div ref={slider} className="relative whitespace-nowrap">
           <HeroText reference={firstText} />

@@ -10,7 +10,7 @@ import Filter from './Filter';
 import { filterHelper } from '@/utils/filterHelper';
 
 export default function WorksContainer({ projects }: { projects: Project[] }) {
-  const [isFilterActive, setIsFilterActive] = useState(true);
+  const [isFilterActive, setIsFilterActive] = useState(false);
   const [filters, setFilters] = useState<string[]>([]);
 
   function handleAdd(filter: string) {
