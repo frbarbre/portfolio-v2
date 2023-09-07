@@ -20,7 +20,7 @@ export const useStore = createWithEqualityFn<Store>()(
     language: "en",
     setLanguage: (language) => set(() => ({ language: language })),
 
-    theme: "dark",
+    theme: "light",
     setTheme: (theme) => set(() => ({ theme: theme })),
   }),
   Object.is

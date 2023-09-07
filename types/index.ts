@@ -5,7 +5,7 @@ export interface Project {
 export interface Acf {
   title: string;
   isFeatured: boolean;
-  tools: Tools[];
+  tools: string[];
   color: string;
   images: Image[];
   prefix: string;
@@ -14,7 +14,7 @@ export interface Acf {
   liveurl: string;
   giturl: string;
   description: Description;
-  type: AcfType;
+  type: ProjectType;
   catagory: Catagory;
   arrowcolor: Arrowcolor;
   ischallenge: boolean;
@@ -64,7 +64,7 @@ export enum Image {
   The6PNG = "-6.png",
 }
 
-export enum AcfType {
+export enum ProjectType {
   DesignDevelopment = "design & development",
   Development = "development",
 }

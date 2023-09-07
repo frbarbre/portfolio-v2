@@ -18,6 +18,7 @@ const config: Config = {
       },
       screens: {
         md: '815px',
+        mg: "1100px",
         lg: '1400px',
       },
       backgroundImage: {
@@ -31,6 +32,13 @@ const config: Config = {
       },
       objectPosition: {
         about: '90% center',
+      },
+      gridTemplateColumns: {
+        "filters": "max-content max-content 1fr",
+        "filters-mobile": "max-content max-content"
+      },
+      gridTemplateRows: {
+        "filters-mobile": "max-content 1fr"
       }
     },
   },
