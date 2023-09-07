@@ -20,7 +20,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`max-w-custom mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-[29px] md:px-[103px] py-[22px]`}
+          className={`max-w-custom mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-[29px] xl:px-[103px] py-[22px]`}
         >
           <div className="hidden md:block">
             <Link

@@ -18,8 +18,8 @@ const config: Config = {
       },
       screens: {
         md: '815px',
-        mg: "1100px",
         lg: '1400px',
+        xl: "1800px",
       },
       backgroundImage: {
         hero: "url('/images/hero.png')",
