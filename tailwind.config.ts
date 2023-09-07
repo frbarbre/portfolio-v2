@@ -38,7 +38,7 @@ const config: Config = {
         "filters-mobile": "max-content max-content"
       },
       gridTemplateRows: {
-        "filters-mobile": "max-content 1fr"
+        "filters": "max-content 1fr"
       }
     },
   },

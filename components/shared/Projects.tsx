@@ -46,6 +46,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
         {projects.map((project, index) => (
           <StaticProjectCard
             key={index}
+            index={index}
             image={project.acf.images[0]}
             prefix={project.acf.prefix}
             slug={project.acf.slug}

@@ -27,7 +27,7 @@ export default function CTA() {
             theme === "light" ? "text-primary-light" : "text-primary-dark"
           } font-bold text-[20px] uppercase tracking-[1.2px] pl-[24px] pt-[30px] pb-[20px] md:pl-[103px] md:pb-[66px] md:pt-[50px]`}
         >
-          {language === "en" ? "Contact" : "Kontakt"}
+          {language === "en" ? "Socials" : "Sociale Medier"}
         </h2>
         <article
           className={`px-[24px] md:px-[103px] lg:px-[147px] flex gap-[20px] flex-col md:flex-row md:items-center justify-between md:mb-[66px] ${

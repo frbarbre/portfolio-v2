@@ -25,7 +25,7 @@ export default function FilterChoice({
 
   return (
     <article
-      className="flex gap-2 items-center group cursor-pointer"
+      className="flex gap-2 items-center group cursor-pointer relative"
       onClick={() => handleAdd(id)}
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
