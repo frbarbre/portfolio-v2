@@ -25,11 +25,11 @@ export default function Filter({
         <article
           className={`fixed md:absolute inset-0 md:inset-auto md:top-[120px] z-40 md:left-0 md:right-0 md:max-h-[630px] ${
             theme === 'light'
-              ? 'border-black/20 bg-white/60'
-              : 'border-white/20 bg-near-black/60'
-          } backdrop-blur-[15px] border-[3px] rounded-[5px] md:rounded-[10px] p-[24px] md:p-[46px] mt-[77px] md:mt-0`}
+              ? 'md:border-black/20 bg-white/60'
+              : 'md:border-white/20 bg-near-black/60'
+          } backdrop-blur-[15px] border-[3px] rounded-[5px] md:rounded-[10px] mt-[77px] md:mt-0`}
         >
-          <div className='overflow-y-scroll h-full lg:grid lg:grid-cols-filters md:gap-x-[40px] lg:gap-x-[108px]'>
+          <div className="overflow-y-scroll md:overflow-y-visible h-full lg:grid lg:grid-cols-filters md:gap-x-[40px] lg:gap-x-[108px] p-[24px] md:p-[46px]">
             {filtersData.map((filter, index) => (
               <div key={nanoid()} className={``}>
                 <h2
