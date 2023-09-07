@@ -49,7 +49,7 @@ export default function Hero() {
         width={2510}
         height={1200}
         placeholder="blur"
-        className="object-cover object-bottom"
+        className="object-cover object-bottom min-h-hero w-full"
       />
       <div className="absolute bottom-[53px]">
         <div ref={slider} className="relative whitespace-nowrap">
