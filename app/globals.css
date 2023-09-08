@@ -3,39 +3,37 @@
 @tailwind utilities;
 
 .slick-next {
-  right: 0.5px;
+  right: 0.5px !important;
 }
 
 .slick-prev {
-  left: 70.5px;
+  left: 70.5px !important;
 }
 
 .slick-prev::before {
-    content: '';
+  content: '' !important;
 }
 
 .slick-next::before {
-  content: '';
+  content: '' !important;
 }
 
 .slick-prev,
 .slick-next {
-    width: 100px;
-    height: 79px;
-    display: flex;
-    background-color: transparent;
-    opacity: 1;
-    bottom: -169px;
-    top: auto;
-    left: auto;
-    z-index: 5;
+  width: 100px !important;
+  height: 79px !important;
+  background-color: transparent !important;
+  bottom: -169px !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 5 !important;
 }
 
 @media (max-width: 815px) {
   .slick-prev,
   .slick-next {
-    height: 57px;
-    bottom: -102px;
+    height: 57px !important;
+    bottom: -102px !important;
   }
 }
 
@@ -43,11 +41,5 @@
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
-  background-color: transparent;
-}
-
-.mask {
-    -webkit-mask-image: url("/mask-desktop.svg");
-    mask-image: url("/mask-desktop.svg");
-    mask-position: contain;
+  background-color: transparent !important;
 }
