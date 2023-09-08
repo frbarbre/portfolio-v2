@@ -6,9 +6,15 @@ interface Props {
   enText: string;
   daText: string;
   variant?: 'lg' | 'sm';
+  fill?: boolean;
 }
 
-export default function RoundButton({ enText, daText, variant = 'lg' }: Props) {
+export default function RoundButton({
+  enText,
+  daText,
+  variant = 'lg',
+  fill,
+}: Props) {
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
 
@@ -24,7 +30,9 @@ export default function RoundButton({ enText, daText, variant = 'lg' }: Props) {
         theme === 'light'
           ? 'border-primary-light hover:text-white'
           : 'border-primary-dark hover:text-near-black'
-      } transition-colors flex items-center justify-center uppercase  font-bold  cursor-pointer relative overflow-hidden`}
+      } transition-colors flex items-center justify-center uppercase  font-bold  cursor-pointer relative overflow-hidden ${
+        fill ? theme === 'light' ? 'bg-white hover:bg-transparent' : 'bg-near-black hover:bg-transparent'
+      : "" }`}
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >

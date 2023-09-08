@@ -1,6 +1,7 @@
 import BackButton from '@/components/work/BackButton';
 import ImageControls from '@/components/work/ImageControls';
 import ImageSlider from '@/components/work/ImageSlider';
+import WorkDescription from '@/components/work/WorkDescription';
 import WorkDetails from '@/components/work/WorkDetails';
 import { fetchProjects } from '@/utils/fetchProjects';
 
@@ -25,6 +26,14 @@ export default async function Work({ params }: { params: { slug: string } }) {
           toolsArr={currentProject.acf.tools}
           type={currentProject.acf.type}
           year={currentProject.acf.year}
+        />
+        <WorkDescription
+          isChallenge={currentProject.acf.ischallenge}
+          challengeUrl={currentProject.acf.challengeurl}
+          daText={currentProject.acf.description.da}
+          enText={currentProject.acf.description.en}
+          liveUrl={currentProject.acf.liveurl}
+          githubUrl={currentProject.acf.giturl}
         />
       </section>
     </div>
