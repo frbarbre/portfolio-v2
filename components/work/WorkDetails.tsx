@@ -23,7 +23,7 @@ export default function WorkDetails({
   const theme = useStore((state) => state.theme);
 
   return (
-    <article className='flex flex-col-reverse md:flex-row justify-between gap-10'>
+    <article className='flex flex-col-reverse md:flex-row justify-between gap-x-10'>
       <section>
         <h1 className='text-[32px] font-bold tracking-[1.92px] md:text-[58px] md:tracking-[3.48px] uppercase pb-[7px]'>{title}</h1>
         <article className="text-[14px] font-semibold tracking-[0.84px] md:text-[24px] md:tracking-[1.44px] uppercase pb-[15px] md:pb-[18px]">
