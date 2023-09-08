@@ -8,9 +8,17 @@ interface Props {
   name: string;
   size?: string;
   isMouseOver?: string;
+  padding?: boolean;
 }
 
-export default function Icon({ link, icon, name, size, isMouseOver }: Props) {
+export default function Icon({
+  link,
+  icon,
+  name,
+  size,
+  isMouseOver,
+  padding,
+}: Props) {
   const theme = useStore((state) => state.theme);
 
   return (
@@ -25,7 +33,9 @@ export default function Icon({ link, icon, name, size, isMouseOver }: Props) {
         } aspect-square relative z-[-1]`}
       />
       <div
-        className={`absolute inset-[12px] rounded-full border z-[-1] ${
+        className={`absolute ${
+          padding ? 'inset-0' : 'inset-[12px]'
+        } rounded-full border z-[-1] ${
           theme === 'light' ? 'border-black/20' : 'border-white/20'
         }`}
       />
@@ -35,7 +45,9 @@ export default function Icon({ link, icon, name, size, isMouseOver }: Props) {
             initial={{ scale: 0, x: '-50%' }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
-            className={`absolute bottom-[-26px] rounded-[6px] px-[15px] py-[6px] text-center w-max translate-x-[-50%] left-[50%] flex items-center justify-center ${
+            className={`absolute ${
+              padding ? 'bottom-[-38px]' : 'bottom-[-26px]'
+            } rounded-[6px] px-[15px] py-[6px] text-center w-max translate-x-[-50%] left-[50%] flex items-center justify-center ${
               theme === 'light'
                 ? 'bg-primary-light text-white'
                 : 'bg-primary-dark text-near-black'

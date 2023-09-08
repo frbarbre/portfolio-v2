@@ -10,10 +10,20 @@ import Filter from './Filter';
 import { filterHelper } from '@/utils/filterHelper';
 import FilterTag from './FilterTag';
 import { AnimatePresence } from 'framer-motion';
+import { skills } from '@/constants';
+import NotFound from './NotFound';
 
 export default function WorksContainer({ projects }: { projects: Project[] }) {
   const [isFilterActive, setIsFilterActive] = useState(false);
   const [filters, setFilters] = useState<string[]>([]);
+
+  const allFilters = [
+    Catagory.Frontend,
+    Catagory.Fullstack,
+    ProjectType.DesignDevelopment,
+    ProjectType.Development,
+    ...skills.map((skill) => skill.id),
+  ];
 
   function handleAdd(filter: string) {
     const isFilterActive = filters.find((data) => data === filter);
@@ -69,38 +79,39 @@ export default function WorksContainer({ projects }: { projects: Project[] }) {
           handleReset={handleReset}
         />
       </section>
-      <div className="min-h-[42.8px] md:mb-[32px] mb-[20px] flex gap-[12px] lg:gap-[0px] mx-[24px] md:mx-[103px] flex-wrap">
-        <AnimatePresence>
-          {filters.length !== 0 && (
-            <>
-              {filters.map((filter) => (
-                <Fragment key={filter}>
-                  <Fragment>
-                    <div className="hidden lg:block">
-                      <Magnetic>
-                        <FilterTag
-                          filters={filters}
-                          name={filter}
-                          handleRemove={handleRemove}
-                        />
-                      </Magnetic>
-                    </div>
-                    <div className="lg:hidden">
-                      <FilterTag
-                        filters={filters}
-                        name={filter}
-                        handleRemove={handleRemove}
-                      />
-                    </div>
-                  </Fragment>
-                </Fragment>
-              ))}
-            </>
-          )}
-        </AnimatePresence>
+      <div className="min-h-[42.8px] md:mb-[32px] mb-[20px] flex gap-[12px] lg:gap-[24px] mx-[24px] md:mx-[103px] flex-wrap">
+        {allFilters.map((filter) => (
+          <Fragment key={filter}>
+            <AnimatePresence>
+              {filters.includes(filter) && (
+                <>
+                  {filters.length > 0 && (
+                    <>
+                      <div className="hidden lg:block">
+                        <Magnetic padding="false">
+                          <FilterTag
+                            name={filter}
+                            handleRemove={handleRemove}
+                          />
+                        </Magnetic>
+                      </div>
+                      <div className="lg:hidden">
+                        <FilterTag name={filter} handleRemove={handleRemove} />
+                      </div>
+                    </>
+                  )}
+                </>
+              )}
+            </AnimatePresence>
+          </Fragment>
+        ))}
       </div>
       <article className="mb-[100px]">
-        <Projects projects={filteredProjects} />
+        {filteredProjects.length > 0 ? (
+          <Projects projects={filteredProjects} />
+        ) : (
+          <NotFound filters={filters} handleReset={handleReset} />
+        )}
       </article>
     </>
   );

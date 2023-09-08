@@ -14,12 +14,12 @@ const config: Config = {
         'near-black': '#0E0E0E',
       },
       transitionTimingFunction: {
-        "modal": 'cubic-bezier(0.76, 0, 0.24, 1);',
+        modal: 'cubic-bezier(0.76, 0, 0.24, 1);',
       },
       screens: {
         md: '815px',
         lg: '1400px',
-        xl: "1800px",
+        xl: '1800px',
       },
       backgroundImage: {
         hero: "url('/images/hero.png')",
@@ -28,18 +28,18 @@ const config: Config = {
         hero: 'calc(100svh - 77px)',
       },
       maxWidth: {
-        custom: "1800px"
+        custom: '1800px',
       },
       objectPosition: {
         about: '90% center',
       },
       gridTemplateColumns: {
-        "filters": "max-content max-content 1fr",
-        "filters-mobile": "max-content max-content"
+        filters: 'max-content max-content 1fr',
+        'filters-mobile': 'max-content max-content',
       },
       gridTemplateRows: {
-        "filters": "max-content 1fr"
-      }
+        filters: 'max-content 1fr',
+      },
     },
   },
   plugins: [],

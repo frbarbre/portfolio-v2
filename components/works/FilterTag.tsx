@@ -6,11 +6,9 @@ import { motion as m, AnimatePresence } from 'framer-motion';
 export default function FilterTag({
   name,
   handleRemove,
-  filters,
 }: {
   name: string;
   handleRemove: (filter: string) => void;
-  filters: string[];
 }) {
   const theme = useStore((state) => state.theme);
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -24,7 +22,7 @@ export default function FilterTag({
               ? 'border-primary-light hover:text-white'
               : 'border-primary-dark hover:text-near-black'
           } border-[3px] rounded-full px-[23px] py-[10px] flex items-center gap-[13px] transition-colors cursor-pointer relative overflow-hidden`}
-          onClick={() => handleRemove(name)}
+          onClick={(() => handleRemove(name))}
           onMouseEnter={() => setIsMouseOver(true)}
           onMouseLeave={() => setIsMouseOver(false)}
         >

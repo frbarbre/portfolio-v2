@@ -1,7 +1,13 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Magnetic({ children }: { children: React.ReactNode }) {
+export default function Magnetic({
+  children,
+  padding,
+}: {
+  children: React.ReactNode;
+  padding?: string;
+}) {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -21,7 +27,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
   const { x, y } = position;
   return (
     <motion.div
-      className='relative w-full p-[12px]'
+      className={`relative ${!padding && "p-[12px]"} w-full`}
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}

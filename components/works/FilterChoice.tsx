@@ -1,6 +1,5 @@
 import { useStore } from '@/app/store';
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
 import { motion as m, AnimatePresence } from 'framer-motion';
 
 export default function FilterChoice({
@@ -21,14 +20,10 @@ export default function FilterChoice({
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
 
-  const [isMouseOver, setIsMouseOver] = useState(false);
-
   return (
     <article
       className="flex gap-2 items-center group cursor-pointer relative"
       onClick={() => handleAdd(id)}
-      onMouseEnter={() => setIsMouseOver(true)}
-      onMouseLeave={() => setIsMouseOver(false)}
     >
       <div
         className={`w-[20px] h-[20px] ${
