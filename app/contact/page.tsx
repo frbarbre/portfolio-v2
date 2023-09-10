@@ -13,13 +13,13 @@ export default function Contact() {
     email: '',
   });
 
-  let newArray = {
+  const newForm = {
     name: form.name,
     message: form.message,
     email: form.email,
   };
 
-  const result = contactSchema.safeParse(newArray);
+  const result = contactSchema.safeParse(newForm);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [errors, setErrors] = useState<ErrorType[]>([]);
 
