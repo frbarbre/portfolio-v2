@@ -68,3 +68,8 @@ export enum ProjectType {
   DesignDevelopment = "design & development",
   Development = "development",
 }
+
+export interface ErrorType {
+  name: string | number;
+  message: string;
+}
