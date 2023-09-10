@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-email/button": "0.0.10",
     "@react-email/components": "^0.0.7",
+    "@react-email/font": "0.0.3",
     "@react-email/html": "0.0.4",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
@@ -19,6 +20,7 @@
     "autoprefixer": "10.4.15",
     "framer-motion": "^10.16.2",
     "gsap": "^3.12.2",
+    "html-to-react": "^1.6.0",
     "install": "^0.13.0",
     "locomotive-scroll": "^5.0.0-beta.8",
     "nanoid": "^4.0.2",

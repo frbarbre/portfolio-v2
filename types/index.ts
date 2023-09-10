@@ -71,5 +71,8 @@ export enum ProjectType {
 
 export interface ErrorType {
   name: string | number;
-  message: string;
+  message: {
+    da: string;
+    en: string;
+  }
 }
