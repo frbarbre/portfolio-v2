@@ -67,7 +67,7 @@ export default function MailToMe({
               {name}
             </Heading>
             <Heading className="uppercase text-[34px] tracking-[2.04px] m-0">
-              Has sent you message
+              Has sent you a message
             </Heading>
             <Heading className="font-semibold text-[#2764FF] m-0 mt-[15px]">
               {email}

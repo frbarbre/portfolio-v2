@@ -101,7 +101,11 @@ export default function Form() {
         onSubmit={handleSubmit}
         className="px-[24px] md:px-[103px] flex flex-col lg:flex-row gap-[50px] lg:gap-[75px] mb-[100px]"
       >
-        <div className="flex flex-col gap-[25px] md:gap-[50px] w-full">
+        <div
+          className={`flex flex-col gap-[25px] md:gap-[50px] w-full ${
+            isSending && 'opacity-25 pointer-events-none'
+          }`}
+        >
           <Input
             label={
               language === 'en'
@@ -165,7 +169,7 @@ export default function Form() {
           />
           <button
             type="submit"
-            className={`w-max transition-opacity ${
+            className={`w-full lg:w-max transition-opacity ${
               isSending && 'opacity-25 pointer-events-none'
             }`}
           >
@@ -184,11 +188,24 @@ export default function Form() {
           </button>
         </article>
       </form>
-      {isPopUpOpen && (
-        <PopUpModal setIsOpen={setIsPopUpOpen}>
-          <div>Succes! A confirmation email has been sent to your inbox!</div>
-        </PopUpModal>
-      )}
+
+      <PopUpModal setIsOpen={setIsPopUpOpen} isOpen={isPopUpOpen}>
+        <section className="flex flex-col gap-[16px]">
+          <h2
+            className={`text-[26px] tracking-[1.56px] uppercase font-bold ${
+              theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+            }`}
+          >
+            Succes!
+          </h2>
+          <p className="text-[18px] tracking-[1.08px] pb-[24px]">
+            {language === 'en'
+              ? 'A confirmation email has been sent to your inbox!'
+              : 'En bekræftelses email er blevet sendt til din indbakke!'}
+          </p>
+          <SquareButton daText="OK" enText="OK" variant="long" />
+        </section>
+      </PopUpModal>
     </>
   );
 }
