@@ -1,7 +1,6 @@
 'use client';
 
 import { useStore } from '../store';
-import Head from 'next/head';
 
 export default function AboutLayout({
   children,
@@ -11,7 +10,7 @@ export default function AboutLayout({
   const language = useStore((state) => state.language);
   return (
     <>
-      <Head>
+      <head>
         <title>
           {language === 'en'
             ? 'About Me - Frederik Barbre - Frontend/Fullstack Developer & Designer'
@@ -77,7 +76,7 @@ export default function AboutLayout({
           name="twitter:description"
           content="Lær mig bedre at kende! Jeg er en passioneret frontend/fullstack webudvikler og designer med ekspertise i React, Next.js og TypeScript. Læs om min rejse og erfaring inden for webudvikling og design."
         />
-      </Head>
+      </head>
       {children}
     </>
   );

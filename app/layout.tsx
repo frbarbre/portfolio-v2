@@ -7,7 +7,6 @@ import Navbar from '@/components/navigation/Navbar';
 import CTA from '@/components/cta/CTA';
 import Footer from '@/components/footer/Footer';
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -29,7 +28,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>Frederik Barbre - Frontend/Fullstack Developer & Designer</title>
         <meta
           name="description"
@@ -67,11 +66,7 @@ export default function RootLayout({
           name="twitter:image"
           content="https://frederikbarbre.dk/images/hero.png"
         />
-        <meta
-          name="theme-color"
-          content={theme === 'light' ? '#FFFFFF' : '#0E0E0E'}
-        />
-      </Head>
+      </head>
       <body
         className={`${barlow.className} ${
           theme === 'light'
