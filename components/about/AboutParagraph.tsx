@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@/app/store';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Fragment } from 'react';
 
 export default function AboutParagraph({
@@ -17,7 +17,7 @@ export default function AboutParagraph({
   enText: string;
   daTitle: string;
   enTitle: string;
-  image: string;
+  image: StaticImageData;
 }) {
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
@@ -72,6 +72,7 @@ export default function AboutParagraph({
         alt="Picture of Frederik Barbre"
         width={1200}
         height={1200}
+        placeholder='blur'
         className={`lg:flex-1 rounded-[5px] md:rounded-[10px] w-full min-h-[366px] object-about object-cover ${
           theme === 'light' ? 'border-black/20' : 'border-white/20'
         } border-[2px]`}

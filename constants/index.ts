@@ -3,6 +3,8 @@ import homeNav from '../public/images/nav-home.png';
 import contactNav from '../public/images/nav-contact.png';
 import worksNav from '../public/images/nav-works.png';
 import aboutNav from '../public/images/nav-about.png';
+import about1 from '../public/images/about1.png';
+import about2 from '../public/images/about2.png';
 
 export const navLinks = [
   {
@@ -182,7 +184,7 @@ export const aboutParagraphs = [
       text: 'Mit navn er Frederik Barbré, og jeg er en utroligt passioneret webdesigner og frontend-udvikler. <br>Min kærlighed til design har været en konstant tråd i mit liv. Jeg husker tydeligt det øjeblik, hvor jeg første gang dykkede ned i Adobe Illustrator og opdagede de uendelige muligheder, der lå lige foran mig. <br>Gennem min uddannelsesrejse har kreativitet og ambition konstant været mine fokuspunkter. Jeg begyndte først at studere spiludvikling, før jeg ændrede kurs og gik ind i webdesignens verden. Erfaringen med at skabe spil har forsynet mig med værdifulde indsigter i brugeradfærd, viden der fortsat er grundlaget for mit arbejde den dag i dag.',
     },
     isReverse: false,
-    image: '/images/about1.png',
+    image: about1,
   },
   {
     en: {
@@ -194,7 +196,7 @@ export const aboutParagraphs = [
       text: 'Fra det øjeblik, jeg blev introduceret til HTML & CSS, tog en dybfølt kærlighed fat i mig. Jeg længtes efter at opsuge hver eneste smule viden, stifte bekendtskab med hver eneste komplekse detalje og skabe de mest fængslende hjemmesider, som min fantasi kunne fremkalde. <br>Siden den dag har mit tempo ikke vaklet. Jeg investerer flere timer dagligt, hvor en betydelig del af min fokus er rettet mod at mestre React med Next.js og TypeScript. Dog forbliver min entusiasme for læring lige så brændende som altid. Jeg ser ivrigt frem til de udfordringer, der venter mig i en professionel sammenhæng.',
     },
     isReverse: true,
-    image: '/images/about2.png',
+    image: about2,
   },
 ];
 
