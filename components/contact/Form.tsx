@@ -3,8 +3,8 @@ import {
   sendEmailToSender,
 } from '@/lib/actions/contact.actions';
 import { contactSchema } from '@/lib/validations/contact.validation';
-import { ErrorType } from '@/types';
-import { useState } from 'react';
+import { ErrorType, FormType } from '@/types';
+import { useEffect, useState } from 'react';
 import Input from './Input';
 import { useStore } from '@/app/store';
 import SquareButton from '../shared/SquareButton';
@@ -15,11 +15,30 @@ import contactPic from '../../public/images/contact.png';
 import PopUpModal from '../shared/PopUpModal';
 
 export default function Form() {
+  let parsedForm: FormType;
+  
+  if (typeof window !== 'undefined') {
+    const savedForm = localStorage.getItem('form');
+    if (savedForm) {
+      parsedForm = JSON.parse(savedForm);
+    }
+  }
+
   const [form, setForm] = useState({
     name: '',
     message: '',
     email: '',
   });
+
+  useEffect(() => {
+    if (parsedForm) {
+      setForm(parsedForm);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('form', JSON.stringify(form));
+  }, [form]);
 
   const result = contactSchema.safeParse(form);
   const [hasSubmitted, setHasSubmitted] = useState(false);
