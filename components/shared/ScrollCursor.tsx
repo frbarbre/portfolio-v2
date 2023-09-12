@@ -71,7 +71,7 @@ export default function ScrollCursor({
           theme === 'light' ? 'text-white' : 'text-near-black'
         } w-[80px] h-[80px] rounded-full bg-transparent uppercase absolute ${
           zIndex || 'z-30'
-        } flex items-center justify-center text-[14px] font-medium pointer-events-none`}
+        } flex items-center justify-center text-[14px] tracking-[0.84px] font-medium pointer-events-none`}
         variants={animationVariant}
         initial="initial"
         animate={active ? 'enter' : 'closed'}
