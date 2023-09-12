@@ -56,7 +56,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Your Name - Frontend/Fullstack Developer & Designer"
+          content="Frederik Barbre - Frontend/Fullstack Developer & Designer"
         />
         <meta
           name="twitter:description"
