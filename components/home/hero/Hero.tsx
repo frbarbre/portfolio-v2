@@ -53,7 +53,7 @@ export default function Hero() {
       <Image
         src={heroPic}
         alt="HeroPicture"
-        width={2510}
+        width={1500}
         height={1200}
         placeholder="blur"
         className="object-cover object-bottom min-h-hero w-full"
@@ -64,7 +64,9 @@ export default function Hero() {
           <HeroText reference={secondText} isSecondText />
         </div>
       </div>
-      <ScrollCursor active={isCursorActive} />
+      <div className='hidden lg:block'>
+        <ScrollCursor active={isCursorActive} />
+      </div>
     </main>
   );
 }
