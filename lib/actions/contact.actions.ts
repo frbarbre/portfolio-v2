@@ -2,7 +2,7 @@
 
 import { Resend } from 'resend';
 import MailToMe from '@/email/MailToMe';
-import { contactSchema } from '../validations/validation.contact';
+import { contactSchema } from '../validations/contact.validation';
 import MailToSender from '@/email/MailToSender';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -75,7 +75,9 @@ export async function sendEmailToSender({
       from: 'Frederik Barbre' + ' <contact@frederikbarbre.dk>',
       to: email,
       subject:
-        language === 'en' ? 'Thank you for your message!' : 'Tak for din besked!',
+        language === 'en'
+          ? 'Thank you for your message!'
+          : 'Tak for din besked!',
       reply_to: 'fr.barbre@gmail.com',
       react: MailToSender({
         name: result.data.name,

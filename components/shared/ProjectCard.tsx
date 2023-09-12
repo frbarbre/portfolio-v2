@@ -10,11 +10,13 @@ export default function ProjectCard({
   type,
   setModal,
   slug,
+  delay
 }: {
   index: number;
   title: string;
   type: string;
   slug: string;
+  delay: number;
   setModal: (modal: { active: boolean; index: number }) => void;
 }) {
   const theme = useStore((state) => state.theme);
@@ -25,7 +27,7 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ delay: index * 0.05 + 0.45, duration: 0.25}}
+      transition={{ delay: delay * 0.05 + 0.45, duration: 0.25}}
       className="w-full"
     >
       <Link href={`/works/${slug}`} className="w-full">

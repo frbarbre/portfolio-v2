@@ -6,6 +6,8 @@ import { ScrollTrigger } from 'gsap/all';
 import HeroText from './HeroText';
 import heroPic from '../../../public/images/hero.png';
 import Image from 'next/image';
+import ScrollCursor from './ScrollCursor';
+import { useState } from 'react';
 
 export default function Hero() {
   const firstText = useRef(null);
@@ -13,6 +15,7 @@ export default function Hero() {
   const slider = useRef(null);
   let xPercent = 0;
   let direction = 1;
+  const [isCursorActive, setIsCursorActive] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -42,7 +45,11 @@ export default function Hero() {
   };
 
   return (
-    <main className="relative flex min-h-hero overflow-hidden bg-no-repeat bg-cover z-[-1]">
+    <main
+      className="relative flex min-h-hero overflow-hidden bg-no-repeat bg-cover"
+      onMouseEnter={() => setIsCursorActive(true)}
+      onMouseLeave={() => setIsCursorActive(false)}
+    >
       <Image
         src={heroPic}
         alt="HeroPicture"
@@ -57,6 +64,7 @@ export default function Hero() {
           <HeroText reference={secondText} isSecondText />
         </div>
       </div>
+      <ScrollCursor active={isCursorActive} />
     </main>
   );
 }

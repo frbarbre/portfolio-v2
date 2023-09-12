@@ -1,25 +1,10 @@
 import { useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { Project } from '@/types';
 import { useStore } from '@/app/store';
-
-const scaleAnimation = {
-  initial: { scale: 0, x: '-50%', y: '-50%' },
-  enter: {
-    scale: 1,
-    x: '-50%',
-    y: '-50%',
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    scale: 0,
-    x: '-50%',
-    y: '-50%',
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
-  },
-};
+import { scaleAnimation } from '@/lib/animations';
 
 export default function Modal({
   modal,
@@ -77,7 +62,7 @@ export default function Modal({
 
   return (
     <>
-      <motion.div
+      <m.div
         ref={modalContainer}
         variants={scaleAnimation}
         initial="initial"
@@ -107,17 +92,17 @@ export default function Modal({
             );
           })}
         </div>
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         ref={cursor}
         className={`w-[80px] h-[80px] rounded-full ${
           theme === 'light' ? 'bg-primary-light' : 'bg-primary-dark'
-        } text-white absolute z-[30] flex items-center justify-center text-[14px] font-regular pointer-events-none`}
+        } text-white absolute z-[30] flex items-center justify-center text-[14px] font-medium pointer-events-none`}
         variants={scaleAnimation}
         initial="initial"
         animate={active ? 'enter' : 'closed'}
-      ></motion.div>
-      <motion.div
+      />
+      <m.div
         ref={cursorLabel}
         className={`${
           theme === 'light' ? 'text-white' : 'text-near-black'
@@ -127,7 +112,7 @@ export default function Modal({
         animate={active ? 'enter' : 'closed'}
       >
         View
-      </motion.div>
+      </m.div>
     </>
   );
 }

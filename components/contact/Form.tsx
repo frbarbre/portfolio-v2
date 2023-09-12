@@ -2,7 +2,7 @@ import {
   sendEmailToMe,
   sendEmailToSender,
 } from '@/lib/actions/contact.actions';
-import { contactSchema } from '@/lib/validations/validation.contact';
+import { contactSchema } from '@/lib/validations/contact.validation';
 import { ErrorType } from '@/types';
 import { useState } from 'react';
 import Input from './Input';
