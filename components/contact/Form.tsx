@@ -1,3 +1,5 @@
+'use client';
+
 import {
   sendEmailToMe,
   sendEmailToSender,
@@ -13,10 +15,12 @@ import RoundButton from '../shared/RoundButton';
 import Image from 'next/image';
 import contactPic from '../../public/images/contact.png';
 import PopUpModal from '../shared/PopUpModal';
+import ScrollCursor from '../shared/ScrollCursor';
+import { cursorAnimation, scaleAnimation } from '@/lib/animations';
 
 export default function Form() {
   let parsedForm: FormType;
-  
+
   if (typeof window !== 'undefined') {
     const savedForm = localStorage.getItem('form');
     if (savedForm) {
@@ -40,13 +44,16 @@ export default function Form() {
     localStorage.setItem('form', JSON.stringify(form));
   }, [form]);
 
-  const result = contactSchema.safeParse(form);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [errors, setErrors] = useState<ErrorType[]>([]);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(true);
+  const [submittedEmail, setSubmittedEmail] = useState('fr.barbre@gmail.com');
+
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
-  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  const result = contactSchema.safeParse(form);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -105,6 +112,7 @@ export default function Form() {
       email: result.data.email,
       language: language,
     });
+    setSubmittedEmail(result.data.email);
     setForm({
       name: '',
       message: '',
@@ -209,22 +217,40 @@ export default function Form() {
       </form>
 
       <PopUpModal setIsOpen={setIsPopUpOpen} isOpen={isPopUpOpen}>
-        <section className="flex flex-col gap-[16px]">
+        <section className="flex flex-col gap-[16px] relative p-[24px]">
           <h2
-            className={`text-[26px] tracking-[1.56px] uppercase font-bold ${
+            className={`text-[26px] tracking-[1.56px] uppercase text-center font-bold ${
               theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
             }`}
           >
             Succes!
           </h2>
-          <p className="text-[18px] tracking-[1.08px] pb-[24px]">
+          <p className="text-[18px] tracking-[1.08px] font-medium  max-w-[350px] text-center">
             {language === 'en'
-              ? 'A confirmation email has been sent to your inbox!'
-              : 'En bekræftelses email er blevet sendt til din indbakke!'}
+              ? 'A confirmation email has been sent to your inbox'
+              : 'En bekræftelses email er blevet sendt til din indbakke'}
           </p>
-          <SquareButton daText="OK" enText="OK" variant="long" />
+          <p
+            className={`mx-auto ${
+              theme === 'light'
+                ? 'bg-primary-light text-white'
+                : 'bg-primary-dark text-near-black'
+            } text-[16px] tracking-[0.96px] my-[10px] font-bold rounded-full py-[10px] px-[22px] `}
+          >
+            {submittedEmail}
+          </p>
+          <div className="lg:hidden">
+            <SquareButton daText="Luk" enText="Dismiss" variant="long" />
+          </div>
         </section>
       </PopUpModal>
+      <ScrollCursor
+        active={isPopUpOpen}
+        animationVariant={scaleAnimation}
+        enText="Dismiss"
+        daText="Luk"
+        zIndex="z-50"
+      />
     </>
   );
 }

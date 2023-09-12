@@ -1,5 +1,3 @@
-'use client';
-
 import Form from '@/components/contact/Form';
 import Heading from '@/components/shared/Heading';
 

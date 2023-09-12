@@ -6,8 +6,9 @@ import { ScrollTrigger } from 'gsap/all';
 import HeroText from './HeroText';
 import heroPic from '../../../public/images/hero.png';
 import Image from 'next/image';
-import ScrollCursor from './ScrollCursor';
+import ScrollCursor from '../../shared/ScrollCursor';
 import { useState } from 'react';
+import { cursorAnimation } from '@/lib/animations';
 
 export default function Hero() {
   const firstText = useRef(null);
@@ -64,9 +65,12 @@ export default function Hero() {
           <HeroText reference={secondText} isSecondText />
         </div>
       </div>
-      <div className='hidden lg:block'>
-        <ScrollCursor active={isCursorActive} />
-      </div>
+      <ScrollCursor
+        active={isCursorActive}
+        animationVariant={cursorAnimation}
+        enText="Scroll"
+        daText="Scroll"
+      />
     </main>
   );
 }

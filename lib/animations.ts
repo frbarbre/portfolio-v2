@@ -14,7 +14,7 @@ export const scaleAnimation = {
   },
 };
 
-export const cursoroAnimation = {
+export const cursorAnimation = {
     initial: { scale: 0, x: '-50%', y: '-150%' },
     enter: {
       scale: 1,
@@ -29,4 +29,3 @@ export const cursoroAnimation = {
       transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
     },
   };
-  
