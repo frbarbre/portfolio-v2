@@ -47,8 +47,8 @@ export default function Form() {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [errors, setErrors] = useState<ErrorType[]>([]);
-  const [isPopUpOpen, setIsPopUpOpen] = useState(true);
-  const [submittedEmail, setSubmittedEmail] = useState('fr.barbre@gmail.com');
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
 
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
