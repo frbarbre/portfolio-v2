@@ -17,7 +17,8 @@ export default function Projects({ projects }: { projects: Project[] }) {
   const theme = useStore((state) => state.theme);
   const language = useStore((state) => state.language);
   const pathname = usePathname();
-  const [projectsLoaded, setProjectsLoaded] = useState(10);
+  const [projectsLoaded, setProjectsLoaded] = useState(12);
+  const motion = useStore((state) => state.motion);
 
   return (
     <>
@@ -27,10 +28,14 @@ export default function Projects({ projects }: { projects: Project[] }) {
             theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
           } font-bold text-[20px] uppercase tracking-[1.2px] pl-[24px] pb-[30px] md:pl-[103px] md:pb-[50px]`}
         >
-          {language === 'en' ? 'Featured Work' : 'Udvalgte Projekter'}
+          {language === 'en' ? 'Newest Work' : 'Nyeste Projekter'}
         </h2>
       )}
-      <div className="flex-col items-center hidden lg:flex justify-center px-[103px]">
+      <div
+        className={`flex-col items-center hidden justify-center px-[103px] ${
+          motion === 'true' ? 'lg:flex' : 'hidden'
+        }`}
+      >
         {projects.map((project, index) => {
           return (
             <Fragment key={index}>
@@ -48,12 +53,18 @@ export default function Projects({ projects }: { projects: Project[] }) {
           );
         })}
       </div>
-      <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[45px] px-[24px] md:px-[103px]">
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 ${
+          pathname !== '/' && 'lg:grid-cols-3'
+        } gap-[30px] md:gap-[45px] px-[24px] md:px-[103px] ${
+          motion === 'true' && 'lg:hidden'
+        }`}
+      >
         {projects.map((project, index) => (
           <Fragment key={index}>
             {index + 1 <= projectsLoaded && (
               <StaticProjectCard
-                index={index < 10 ? index : index - projectsLoaded + 5}
+                index={index < 12 ? index : index - projectsLoaded + 5}
                 image={project.acf.images[0]}
                 prefix={project.acf.prefix}
                 slug={project.acf.slug}
@@ -72,7 +83,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.25, delay: 11 * 0.05 + 0.45 }}
           className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
-          onClick={() => setProjectsLoaded((prev) => prev + 10)}
+          onClick={() => setProjectsLoaded((prev) => prev + 12)}
         >
           <SquareButton
             daText="Indlæs Flere"

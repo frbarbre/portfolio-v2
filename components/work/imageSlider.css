@@ -1,0 +1,41 @@
+.slick-next {
+  right: 0.5px;
+}
+
+.slick-prev {
+  left: 70.5px;
+}
+
+.slick-prev::before {
+  content: '';
+}
+
+.slick-next::before {
+  content: '';
+}
+
+.slick-prev,
+.slick-next {
+  width: 100px;
+  height: 79px;
+  background-color: transparent;
+  bottom: -169px;
+  top: auto;
+  left: auto;
+  z-index: 5;
+}
+
+@media (max-width: 815px) {
+  .slick-prev,
+  .slick-next {
+    height: 57px;
+    bottom: -102px;
+  }
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  background-color: transparent;
+}

@@ -10,6 +10,15 @@ export default function LanguageSwitcher() {
   const theme = useStore((state) => state.theme);
 
   useEffect(() => {
+    if (localStorage.getItem('language') === null) {
+      if (navigator.language === 'da') {
+        setLanguage('da');
+      }
+      else {
+        setLanguage('en');
+      }
+      return
+    }
     if (localStorage.getItem('language') === 'da') {
       setLanguage('da');
     } else {

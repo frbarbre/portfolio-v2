@@ -9,24 +9,31 @@ import Image from 'next/image';
 import ScrollCursor from '../../shared/ScrollCursor';
 import { useState } from 'react';
 import { cursorAnimation } from '@/lib/animations';
+import { useStore } from '@/app/store';
 
 export default function Hero() {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
-  let direction = 1;
+  let direction = -1;
   const [isCursorActive, setIsCursorActive] = useState(false);
+  const motion = useStore((state) => state.motion);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    if (motion === 'true') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
-        onUpdate: (e) => (direction = e.direction * -1),
+        onUpdate:
+          motion === 'true'
+            ? (e) => (direction = e.direction * -1)
+            : () => null,
       },
       x: '-500px',
     });
@@ -54,12 +61,12 @@ export default function Hero() {
       <Image
         src={heroPic}
         alt="HeroPicture"
-        width={1500}
+        width={2510}
         height={1200}
         placeholder="blur"
-        className="object-cover object-bottom min-h-hero w-full"
+        className="object-cover object-bottom h-hero w-full"
       />
-      <div className="absolute bottom-[53px]">
+      <div className="absolute bottom-[30px]">
         <div ref={slider} className="relative whitespace-nowrap">
           <HeroText reference={firstText} />
           <HeroText reference={secondText} isSecondText />

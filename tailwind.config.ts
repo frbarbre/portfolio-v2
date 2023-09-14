@@ -24,7 +24,7 @@ const config: Config = {
       backgroundImage: {
         hero: "url('/images/hero.png')",
       },
-      minHeight: {
+      height: {
         hero: 'calc(100svh - 77px)',
       },
       maxWidth: {

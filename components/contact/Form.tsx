@@ -17,6 +17,7 @@ import contactPic from '../../public/images/contact.png';
 import PopUpModal from '../shared/PopUpModal';
 import ScrollCursor from '../shared/ScrollCursor';
 import { cursorAnimation, scaleAnimation } from '@/lib/animations';
+import { set } from 'zod';
 
 export default function Form() {
   let parsedForm: FormType;
@@ -216,7 +217,11 @@ export default function Form() {
         </article>
       </form>
 
-      <PopUpModal setIsOpen={setIsPopUpOpen} isOpen={isPopUpOpen}>
+      <PopUpModal
+        setIsOpen={setIsPopUpOpen}
+        isOpen={isPopUpOpen}
+        isDissmissable
+      >
         <section className="flex flex-col gap-[16px] relative p-[24px]">
           <h2
             className={`text-[26px] tracking-[1.56px] uppercase text-center font-bold ${
@@ -225,7 +230,7 @@ export default function Form() {
           >
             Succes!
           </h2>
-          <p className="text-[18px] tracking-[1.08px] font-medium  max-w-[350px] text-center">
+          <p className="text-[18px] tracking-[1.08px] font-medium max-w-[350px] text-center">
             {language === 'en'
               ? 'A confirmation email has been sent to your inbox'
               : 'En bekræftelses email er blevet sendt til din indbakke'}
@@ -239,7 +244,7 @@ export default function Form() {
           >
             {submittedEmail}
           </p>
-          <div className="lg:hidden">
+          <div className="lg:hidden" onClick={() => setIsPopUpOpen(false)}>
             <SquareButton daText="Luk" enText="Dismiss" variant="long" />
           </div>
         </section>

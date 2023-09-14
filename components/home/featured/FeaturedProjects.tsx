@@ -4,12 +4,13 @@ import { sortProjects } from "@/utils/sortProjects";
 
 export default async function FeaturedProjects() {
   const projects = await fetchProjects();
-  const featuredProject = projects.filter((project) => project.acf.isFeatured);
-  sortProjects(featuredProject);
+  sortProjects(projects);
+
+  const newestProjects = [projects[0], projects[1], projects[2], projects[3]];
 
   return (
     <>
-      <Projects projects={featuredProject} />
+      <Projects projects={newestProjects} />
     </>
   );
 }
