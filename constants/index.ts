@@ -1,199 +1,199 @@
-import { Catagory, ProjectType, Tools } from '@/types';
-import homeNav from '../public/images/nav-home.png';
-import contactNav from '../public/images/nav-contact.png';
-import worksNav from '../public/images/nav-works.png';
-import aboutNav from '../public/images/nav-about.png';
-import about1 from '../public/images/about1.png';
-import about2 from '../public/images/about2.png';
+import { Catagory, ProjectType, Tools } from "@/types";
+import homeNav from "../public/images/nav-home.png";
+import contactNav from "../public/images/nav-contact.png";
+import worksNav from "../public/images/nav-works.png";
+import aboutNav from "../public/images/nav-about.png";
+import about1 from "../public/images/about1.png";
+import about2 from "../public/images/about2.png";
 
 export const navLinks = [
   {
     title: {
-      en: 'Home',
-      da: 'Hjem',
+      en: "Home",
+      da: "Hjem",
     },
-    path: '',
+    path: "",
     image: homeNav,
   },
   {
     title: {
-      en: 'Contact',
-      da: 'Kontakt',
+      en: "Contact",
+      da: "Kontakt",
     },
-    path: 'contact',
+    path: "contact",
     image: contactNav,
   },
   {
     title: {
-      en: 'Works',
-      da: 'Projekter',
+      en: "Works",
+      da: "Projekter",
     },
-    path: 'works',
+    path: "works",
     image: worksNav,
   },
   {
     title: {
-      en: 'About',
-      da: 'Om Mig',
+      en: "About",
+      da: "Om Mig",
     },
-    path: 'about',
+    path: "about",
     image: aboutNav,
   },
 ];
 
 export const skillsText = {
-  en: 'I am Frederik Barbré, a profoundly enthusiastic web developer. <br> I derive immense joy from crafting distinctive and captivating designs and then bringing them to life through development. My proficiency spans across a broad spectrum of industry-standard JavaScript frontend technologies:',
+  en: "I am Frederik Barbré, a profoundly enthusiastic web developer. \n\n I derive immense joy from crafting distinctive and captivating designs and then bringing them to life through development. My proficiency spans across a broad spectrum of industry-standard JavaScript frontend technologies:",
 
-  da: 'Jeg hedder Frederik Barbré, og jeg er en en dybt engageret webudvikler. <br> Jeg finder stor glæde ved at skabe distinkte og fængslende design og derefter bringe dem til live gennem udvikling. Min ekspertise strækker sig over en bred vifte af branchestandard JavaScript frontend-teknologier:',
+  da: "Jeg hedder Frederik Barbré, og jeg er en en dybt engageret webudvikler. \n\n Jeg finder stor glæde ved at skabe distinkte og fængslende design og derefter bringe dem til live gennem udvikling. Min ekspertise strækker sig over en bred vifte af branchestandard JavaScript frontend-teknologier:",
 };
 
 export const skills = [
   {
-    title: 'Next.JS',
-    icon: '/tools/next.svg',
+    title: "Next.JS",
+    icon: "/tools/next.svg",
     id: Tools.next,
-    link: 'https://nextjs.org/',
+    link: "https://nextjs.org/",
     isFeatured: true,
   },
   {
-    title: 'React',
-    icon: '/tools/react.svg',
+    title: "React",
+    icon: "/tools/react.svg",
     id: Tools.react,
-    link: 'https://reactjs.org/',
+    link: "https://reactjs.org/",
     isFeatured: true,
   },
   {
-    title: 'Svelte',
-    icon: '/tools/svelte.svg',
+    title: "Svelte",
+    icon: "/tools/svelte.svg",
     id: Tools.svelte,
-    link: 'https://svelte.dev/',
+    link: "https://svelte.dev/",
     isFeatured: true,
   },
   {
-    title: 'Astro',
-    icon: '/tools/astro.svg',
+    title: "Astro",
+    icon: "/tools/astro.svg",
     id: Tools.astro,
-    link: 'https://astro.build/',
+    link: "https://astro.build/",
     isFeatured: true,
   },
   {
-    title: 'TypeScript',
-    icon: '/tools/typescript.svg',
+    title: "TypeScript",
+    icon: "/tools/typescript.svg",
     id: Tools.typescript,
-    link: 'https://www.typescriptlang.org/',
+    link: "https://www.typescriptlang.org/",
     isFeatured: true,
   },
   {
-    title: 'JavaScript',
-    icon: '/tools/javascript.svg',
+    title: "JavaScript",
+    icon: "/tools/javascript.svg",
     id: Tools.javascript,
-    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     isFeatured: false,
   },
   {
-    title: 'Clerk',
-    icon: '/tools/clerk.svg',
+    title: "Clerk",
+    icon: "/tools/clerk.svg",
     id: Tools.clerk,
-    link: 'https://clerk.dev/',
+    link: "https://clerk.dev/",
     isFeatured: false,
   },
   {
-    title: 'Tailwind CSS',
-    icon: '/tools/tailwind.svg',
+    title: "Tailwind CSS",
+    icon: "/tools/tailwind.svg",
     id: Tools.tailwind,
-    link: 'https://tailwindcss.com/',
+    link: "https://tailwindcss.com/",
     isFeatured: true,
   },
   {
-    title: 'Sass',
-    icon: '/tools/scss.svg',
+    title: "Sass",
+    icon: "/tools/scss.svg",
     id: Tools.scss,
-    link: 'https://sass-lang.com/',
+    link: "https://sass-lang.com/",
     isFeatured: false,
   },
   {
-    title: 'GSAP',
-    icon: '/tools/gsap.svg',
+    title: "GSAP",
+    icon: "/tools/gsap.svg",
     id: Tools.gsap,
-    link: 'https://greensock.com/gsap/',
+    link: "https://greensock.com/gsap/",
     isFeatured: false,
   },
   {
-    title: 'Three.js',
-    icon: '/tools/three.svg',
+    title: "Three.js",
+    icon: "/tools/three.svg",
     id: Tools.threejs,
-    link: 'https://threejs.org/',
+    link: "https://threejs.org/",
     isFeatured: false,
   },
   {
-    title: 'GraphQL',
-    icon: '/tools/graphql.svg',
+    title: "GraphQL",
+    icon: "/tools/graphql.svg",
     id: Tools.graphql,
-    link: 'https://graphql.org/',
+    link: "https://graphql.org/",
     isFeatured: false,
   },
   {
-    title: 'MongoDB',
-    icon: '/tools/mongodb.svg',
+    title: "MongoDB",
+    icon: "/tools/mongodb.svg",
     id: Tools.mongodb,
-    link: 'https://www.mongodb.com/',
+    link: "https://www.mongodb.com/",
     isFeatured: false,
   },
   {
-    title: 'Zustand',
-    icon: '/tools/zustand.svg',
+    title: "Zustand",
+    icon: "/tools/zustand.svg",
     id: Tools.zustand,
-    link: 'https://zustand.surge.sh/',
+    link: "https://zustand.surge.sh/",
     isFeatured: true,
   },
   {
-    title: 'Framer Motion',
-    icon: '/tools/framer-motion.svg',
+    title: "Framer Motion",
+    icon: "/tools/framer-motion.svg",
     id: Tools.framermotion,
-    link: 'https://www.framer.com/motion/',
+    link: "https://www.framer.com/motion/",
     isFeatured: true,
   },
 ];
 
 export const socials = [
   {
-    title: 'GitHub',
-    icon: '/socials/github.png',
-    link: 'https://github.com/frbarbre',
+    title: "GitHub",
+    icon: "/socials/github.png",
+    link: "https://github.com/frbarbre",
   },
   {
-    title: 'Frontend Mentor',
-    icon: '/socials/frontendmentor.svg',
-    link: 'https://www.frontendmentor.io/profile/frbarbre',
+    title: "Frontend Mentor",
+    icon: "/socials/frontendmentor.svg",
+    link: "https://www.frontendmentor.io/profile/frbarbre",
   },
   {
-    title: 'LinkedIn',
-    icon: '/socials/linkedin.svg',
-    link: 'https://www.linkedin.com/in/frbarbre/',
+    title: "LinkedIn",
+    icon: "/socials/linkedin.svg",
+    link: "https://www.linkedin.com/in/frbarbre/",
   },
 ];
 
 export const aboutParagraphs = [
   {
     en: {
-      title: '',
-      text: 'My name is Frederik Barbré, and I am an immensely passionate web designer and frontend developer. <br>My love for design has been a constant thread in my life. I distinctly recall the moment I first delved into Adobe Illustrator, discovering the boundless possibilities that lay right before me. <br>Throughout my educational journey, creativity and ambition have consistently been my focal points. I initially pursued studies in game development before redirecting my path toward the realm of web design. The experience of creating games has endowed me with valuable insights into user behavior, knowledge that continues to underpin my work to this day.',
+      title: "",
+      text: "My name is Frederik Barbré, and I am an immensely passionate web designer and frontend developer. \n\nMy love for design has been a constant thread in my life. I distinctly recall the moment I first delved into Adobe Illustrator, discovering the boundless possibilities that lay right before me. \n\nThroughout my educational journey, creativity and ambition have consistently been my focal points. I initially pursued studies in game development before redirecting my path toward the realm of web design. The experience of creating games has endowed me with valuable insights into user behavior, knowledge that continues to underpin my work to this day.",
     },
     da: {
-      title: '',
-      text: 'Mit navn er Frederik Barbré, og jeg er en utroligt passioneret webdesigner og frontend-udvikler. <br>Min kærlighed til design har været en konstant tråd i mit liv. Jeg husker tydeligt det øjeblik, hvor jeg første gang dykkede ned i Adobe Illustrator og opdagede de uendelige muligheder, der lå lige foran mig. <br>Gennem min uddannelsesrejse har kreativitet og ambition konstant været mine fokuspunkter. Jeg begyndte først at studere spiludvikling, før jeg ændrede kurs og gik ind i webdesignens verden. Erfaringen med at skabe spil har forsynet mig med værdifulde indsigter i brugeradfærd, viden der fortsat er grundlaget for mit arbejde den dag i dag.',
+      title: "",
+      text: "Mit navn er Frederik Barbré, og jeg er en utroligt passioneret webdesigner og frontend-udvikler. \n\nMin kærlighed til design har været en konstant tråd i mit liv. Jeg husker tydeligt det øjeblik, hvor jeg første gang dykkede ned i Adobe Illustrator og opdagede de uendelige muligheder, der lå lige foran mig. \n\nGennem min uddannelsesrejse har kreativitet og ambition konstant været mine fokuspunkter. Jeg begyndte først at studere spiludvikling, før jeg ændrede kurs og gik ind i webdesignens verden. Erfaringen med at skabe spil har forsynet mig med værdifulde indsigter i brugeradfærd, viden der fortsat er grundlaget for mit arbejde den dag i dag.",
     },
     isReverse: false,
     image: about1,
   },
   {
     en: {
-      title: 'My Passions',
-      text: "From the moment I was introduced to HTML & CSS, a profound affection took hold of me. I yearned to absorb every ounce of knowledge, acquaint myself with each intricate detail, and construct the most captivating websites that my imagination could conjure. <br>Since that day, my pace hasn't wavered. I invest multiple hours daily, with a significant portion of my focus directed toward mastering React with Next.js and TypeScript. However, my enthusiasm for learning remains as fervent as ever. I eagerly anticipate the challenges that lie ahead in a professional setting.",
+      title: "My Passions",
+      text: "From the moment I was introduced to HTML & CSS, a profound affection took hold of me. I yearned to absorb every ounce of knowledge, acquaint myself with each intricate detail, and construct the most captivating websites that my imagination could conjure. \n\nSince that day, my pace hasn't wavered. I invest multiple hours daily, with a significant portion of my focus directed toward mastering React with Next.js and TypeScript. However, my enthusiasm for learning remains as fervent as ever. I eagerly anticipate the challenges that lie ahead in a professional setting.",
     },
     da: {
-      title: 'Mine Passioner',
-      text: 'Fra det øjeblik, jeg blev introduceret til HTML & CSS, tog en dybfølt kærlighed fat i mig. Jeg længtes efter at opsuge hver eneste smule viden, stifte bekendtskab med hver eneste komplekse detalje og skabe de mest fængslende hjemmesider, som min fantasi kunne fremkalde. <br>Siden den dag har mit tempo ikke vaklet. Jeg investerer flere timer dagligt, hvor en betydelig del af min fokus er rettet mod at mestre React med Next.js og TypeScript. Dog forbliver min entusiasme for læring lige så brændende som altid. Jeg ser ivrigt frem til de udfordringer, der venter mig i en professionel sammenhæng.',
+      title: "Mine Passioner",
+      text: "Fra det øjeblik, jeg blev introduceret til HTML & CSS, tog en dybfølt kærlighed fat i mig. Jeg længtes efter at opsuge hver eneste smule viden, stifte bekendtskab med hver eneste komplekse detalje og skabe de mest fængslende hjemmesider, som min fantasi kunne fremkalde. \n\nSiden den dag har mit tempo ikke vaklet. Jeg investerer flere timer dagligt, hvor en betydelig del af min fokus er rettet mod at mestre React med Next.js og TypeScript. Dog forbliver min entusiasme for læring lige så brændende som altid. Jeg ser ivrigt frem til de udfordringer, der venter mig i en professionel sammenhæng.",
     },
     isReverse: true,
     image: about2,
@@ -203,120 +203,120 @@ export const aboutParagraphs = [
 export const filtersData = [
   {
     title: {
-      en: 'Type',
-      da: 'Type',
+      en: "Type",
+      da: "Type",
     },
     choices: [
       {
         id: ProjectType.Development,
-        en: 'Development',
-        da: 'Udvikling',
+        en: "Development",
+        da: "Udvikling",
       },
       {
         id: ProjectType.DesignDevelopment,
-        en: 'Design & Development',
-        da: 'Design & Udvikling',
+        en: "Design & Development",
+        da: "Design & Udvikling",
       },
     ],
   },
   {
     title: {
-      en: 'Catagory',
-      da: 'Kategori',
+      en: "Catagory",
+      da: "Kategori",
     },
     choices: [
       {
         id: Catagory.Frontend,
-        en: 'Frontend',
-        da: 'Frontend',
+        en: "Frontend",
+        da: "Frontend",
       },
       {
         id: Catagory.Fullstack,
-        en: 'Fullstack',
-        da: 'Fullstack',
+        en: "Fullstack",
+        da: "Fullstack",
       },
     ],
   },
   {
     title: {
-      en: 'Tools',
-      da: 'Værktøjer',
+      en: "Tools",
+      da: "Værktøjer",
     },
     choices: [
       {
         id: Tools.react,
-        en: 'React',
-        da: 'React',
+        en: "React",
+        da: "React",
       },
       {
         id: Tools.next,
-        en: 'Next.JS',
-        da: 'Next.JS',
+        en: "Next.JS",
+        da: "Next.JS",
       },
       {
         id: Tools.tailwind,
-        en: 'Tailwind CSS',
-        da: 'Tailwind CSS',
+        en: "Tailwind CSS",
+        da: "Tailwind CSS",
       },
       {
         id: Tools.typescript,
-        en: 'TypeScript',
-        da: 'TypeScript',
+        en: "TypeScript",
+        da: "TypeScript",
       },
       {
         id: Tools.javascript,
-        en: 'JavaScript',
-        da: 'JavaScript',
+        en: "JavaScript",
+        da: "JavaScript",
       },
       {
         id: Tools.svelte,
-        en: 'Svelte',
-        da: 'Svelte',
+        en: "Svelte",
+        da: "Svelte",
       },
       {
         id: Tools.astro,
-        en: 'Astro',
-        da: 'Astro',
+        en: "Astro",
+        da: "Astro",
       },
       {
         id: Tools.zustand,
-        en: 'Zustand',
-        da: 'Zustand',
+        en: "Zustand",
+        da: "Zustand",
       },
       {
         id: Tools.framermotion,
-        en: 'Framer Motion',
-        da: 'Framer Motion',
+        en: "Framer Motion",
+        da: "Framer Motion",
       },
       {
         id: Tools.gsap,
-        en: 'GSAP',
-        da: 'GSAP',
+        en: "GSAP",
+        da: "GSAP",
       },
       {
         id: Tools.mongodb,
-        en: 'MongoDB',
-        da: 'MongoDB',
+        en: "MongoDB",
+        da: "MongoDB",
       },
       {
         id: Tools.graphql,
-        en: 'GraphQL',
-        da: 'GraphQL',
+        en: "GraphQL",
+        da: "GraphQL",
       },
       {
         id: Tools.threejs,
-        en: 'Three.js',
-        da: 'Three.js',
+        en: "Three.js",
+        da: "Three.js",
       },
       {
         id: Tools.scss,
-        en: 'Sass',
-        da: 'Sass',
+        en: "Sass",
+        da: "Sass",
       },
       {
         id: Tools.clerk,
-        en: 'Clerk',
-        da: 'Clerk',
+        en: "Clerk",
+        da: "Clerk",
       },
     ],
   },

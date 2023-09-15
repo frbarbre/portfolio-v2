@@ -1,4 +1,4 @@
-import { useStore } from '@/app/store';
+import { useStore } from "@/app/store";
 
 export default function NotFound({
   filters,
@@ -13,24 +13,32 @@ export default function NotFound({
   return (
     <div className=" mx-[24px] md:mx-[103px] pt-[30px] flex justify-center flex-col items-center">
       <h2 className="text-[32px] uppercase font-bold tracking-[1.92px]">
-        {language === 'en' ? 'Ooops' : 'Uuups'} 😥
+        {language === "en" ? "Ooops" : "Uuups"} 😥
       </h2>
       <p className="max-w-[300px] text-center mt-[20px] font-medium tracking-[0.92px]">
-        {language === 'en'
-          ? 'I currently do not have any projects that meet the following criteria:'
-          : 'Jeg har i øjeblikket ingen projekter, der opfylder følgende kriterier:'}
+        {language === "en"
+          ? "I currently do not have any projects that meet the following criteria:"
+          : "Jeg har i øjeblikket ingen projekter, der opfylder følgende kriterier:"}
       </p>
       <div className="flex flex-wrap gap-[12px] max-w-[350px] justify-center py-[30px]">
-        {filters.map((filter) => (
+        {filters.map((name) => (
           <div
-            key={filter}
+            key={name}
             className={`text-[12px] tracking-[0.72px] uppercase font-bold rounded-full py-[10px] px-[22px] ${
-              theme === 'light'
-                ? 'bg-primary-light text-white'
-                : 'bg-primary-dark text-near-black'
+              theme === "light"
+                ? "bg-primary-light text-white"
+                : "bg-primary-dark text-near-black"
             }`}
           >
-            {filter}
+            {name === "designdevelopment" && language === "da"
+              ? "design & udvikling"
+              : name === "designdevelopment" && language === "en"
+              ? "design & development"
+              : name === "tailwindcss"
+              ? "tailwind css"
+              : name === "framermotion"
+              ? "framer motion"
+              : name}
           </div>
         ))}
       </div>
@@ -38,7 +46,7 @@ export default function NotFound({
         className="tracking-[0.96px] uppercase font-bold cursor-pointer hover:underline pt-[15px]"
         onClick={handleReset}
       >
-        {language === 'en' ? 'Clear Filters' : 'Ryd Filtre'}
+        {language === "en" ? "Clear Filters" : "Ryd Filtre"}
       </h3>
     </div>
   );

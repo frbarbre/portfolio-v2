@@ -65,7 +65,7 @@ export enum Image {
 }
 
 export enum ProjectType {
-  DesignDevelopment = 'design&development',
+  DesignDevelopment = 'designdevelopment',
   Development = 'development',
 }
 

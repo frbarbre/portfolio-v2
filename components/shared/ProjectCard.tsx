@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useStore } from '@/app/store';
-import Link from 'next/link';
-import { motion as m, AnimatePresence } from 'framer-motion';
+import { useStore } from "@/app/store";
+import Link from "next/link";
+import { motion as m, AnimatePresence } from "framer-motion";
 
 export default function ProjectCard({
   index,
@@ -39,9 +39,9 @@ export default function ProjectCard({
             setModal({ active: false, index });
           }}
           className={`flex w-full justify-between items-center px-[44px] py-[50px] border-t-[1px] ${
-            theme === 'light'
-              ? 'border-t-black/20 last:border-b-black/20'
-              : 'border-t-white/20 last:border-b-white/20'
+            theme === "light"
+              ? "border-t-black/20 last:border-b-black/20"
+              : "border-t-white/20 last:border-b-white/20"
           }  cursor-pointer transition-[200ms] last:border-b group`}
         >
           <h2
@@ -50,12 +50,12 @@ export default function ProjectCard({
             {title}
           </h2>
           <p className="group-hover:translate-x-[10px] uppercase text-[16px] font-bold tracking-[0.96px] transition-all duration-[400ms] group-hover:opacity-50">
-            {type === 'design&development' && language === 'da'
-              ? 'design & udvikling'
-              : type === 'development' && language === 'da'
-              ? 'udvikling'
-              : type === 'design&development' && language === 'en'
-              ? 'design & development'
+            {type === "designdevelopment" && language === "da"
+              ? "design & udvikling"
+              : type === "development" && language === "da"
+              ? "udvikling"
+              : type === "designdevelopment" && language === "en"
+              ? "design & development"
               : type}
           </p>
         </div>

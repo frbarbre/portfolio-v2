@@ -1,7 +1,7 @@
-import WorksContainer from '@/components/works/WorkContainer';
-import { FilterSearchParams } from '@/types';
-import { fetchProjects } from '@/utils/fetchProjects';
-import { sortProjects } from '@/utils/sortProjects';
+import WorksContainer from "@/components/shared/WorkContainer";
+import { FilterSearchParams } from "@/types";
+import { fetchProjects } from "@/utils/fetchProjects";
+import { sortProjects } from "@/utils/sortProjects";
 
 export default async function Archive({
   searchParams,

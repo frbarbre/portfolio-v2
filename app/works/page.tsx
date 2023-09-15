@@ -1,4 +1,4 @@
-import WorksContainer from "@/components/works/WorkContainer";
+import WorksContainer from "@/components/shared/WorkContainer";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { sortProjects } from "@/utils/sortProjects";
 

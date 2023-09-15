@@ -89,7 +89,7 @@ export default function Filter({
                 alt="Close Button"
                 width={20}
                 height={20}
-                className="absolute md:right-[52px] md:top-[52px] right-[24px] top-sm cursor-pointer"
+                className="absolute md:right-[52px] md:top-[52px] top-[24px] right-[24px] top-sm cursor-pointer"
                 onClick={() => setIsFilterActive(false)}
               />
             </m.article>

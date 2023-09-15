@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useStore } from '@/app/store';
-import { skillsText } from '@/constants';
-import RoundButton from '../../shared/RoundButton';
-import Link from 'next/link';
-import SkillIcons from './SkillIcons';
-import Magnetic from '@/components/shared/Magnetic';
+import { useStore } from "@/app/store";
+import { skillsText } from "@/constants";
+import RoundButton from "../../shared/RoundButton";
+import Link from "next/link";
+import SkillIcons from "./SkillIcons";
+import Magnetic from "@/components/shared/Magnetic";
 
 export default function Skills() {
   const language = useStore((state) => state.language);
@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <section className="px-sm md:px-md md:py-[100px] py-[50px] md:pb-[100px] md:flex items-center justify-between gap-16">
       <article>
-        <p className="max-w-[733px] text-[18px] tracking-[1.08px] text-center md:text-left">
+        <p className="max-w-[733px] text-[18px] tracking-[1.08px] text-center md:text-left whitespace-pre-line">
           <SkillsText language={language} theme={theme} />
         </p>
         <SkillIcons />
@@ -22,14 +22,14 @@ export default function Skills() {
 
       <div className="hidden lg:block">
         <Magnetic>
-          <Link href={'/about'} className="hidden md:block">
+          <Link href={"/about"} className="hidden md:block">
             <RoundButton enText="About Me" daText="Om Mig" />
           </Link>
         </Magnetic>
       </div>
 
       <div className="lg:hidden">
-        <Link href={'/about'} className="hidden md:block">
+        <Link href={"/about"} className="hidden md:block">
           <RoundButton enText="About Me" daText="Om Mig" />
         </Link>
       </div>
@@ -44,26 +44,15 @@ export function SkillsText({
   theme: string;
   language: string;
 }) {
-  const enSplit = skillsText.en.split('JavaScript');
-  const daSplit = skillsText.da.split('JavaScript');
-
-  const enBreak = enSplit[0].split('<br>');
-  const daBreak = daSplit[0].split('<br>');
+  const enSplit = skillsText.en.split("JavaScript");
+  const daSplit = skillsText.da.split("JavaScript");
 
   return (
     <>
-      {language === 'en' ? (
-        <SkillsTextContent
-          breakArr={enBreak}
-          splitArr={enSplit}
-          theme={theme}
-        />
+      {language === "en" ? (
+        <SkillsTextContent splitArr={enSplit} theme={theme} />
       ) : (
-        <SkillsTextContent
-          breakArr={daBreak}
-          splitArr={daSplit}
-          theme={theme}
-        />
+        <SkillsTextContent splitArr={daSplit} theme={theme} />
       )}
     </>
   );
@@ -71,22 +60,17 @@ export function SkillsText({
 
 export function SkillsTextContent({
   splitArr,
-  breakArr,
   theme,
 }: {
   splitArr: string[];
-  breakArr: string[];
   theme: string;
 }) {
   return (
     <>
-      {breakArr[0]}
-      <br />
-      <br />
-      {breakArr[1]}
+      {splitArr[0]}
       <span
         className={
-          theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+          theme === "light" ? "text-primary-light" : "text-primary-dark"
         }
       >
         JavaScript

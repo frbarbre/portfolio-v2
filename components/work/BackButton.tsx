@@ -1,33 +1,26 @@
-'use client';
+"use client";
 
-import { useStore } from '@/app/store';
-import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useStore } from "@/app/store";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function BackButton({ isInArchive }: { isInArchive?: boolean }) {
+export default function BackButton({ isInArchive, href }: { isInArchive?: boolean, href?: string }) {
   const theme = useStore((state) => state.theme);
   const router = useRouter();
   const pathname = usePathname();
 
   function handleBack() {
-    if (pathname.includes('/archive')) {
-      router.push('/works');
+    if (href) {
+      router.push(href);
       return;
+    } else {
+      router.back();
     }
-    if (router.back() === undefined) {
-      if (isInArchive) {
-        router.push('/works/archive');
-        return;
-      }
-      router.push('/works');
-      return;
-    }
-    router.back();
   }
 
   return (
     <Image
-      src={theme === 'light' ? '/arrow-blue.svg' : '/arrow-dark.svg'}
+      src={theme === "light" ? "/arrow-blue.svg" : "/arrow-dark.svg"}
       alt="back-button"
       width={55}
       height={30}
