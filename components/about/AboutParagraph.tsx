@@ -2,7 +2,6 @@
 
 import { useStore } from "@/app/store";
 import Image, { StaticImageData } from "next/image";
-import { Fragment } from "react";
 
 export default function AboutParagraph({
   isReverse,
@@ -24,11 +23,9 @@ export default function AboutParagraph({
 
   return (
     <section
-      className={`flex flex-col gap-[30px] lg:gap-[114px] ${
-        isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
-      } justify-between px-sm md:px-md items-center`}
+      className={`flex flex-col gap-[30px] lg:gap-[114px] lg:grid lg:grid-cols-2 justify-between px-sm md:px-md items-center`}
     >
-      <article className="flex-1">
+      <article className={`${isReverse && "order-2"}`}>
         {enTitle !== "" && (
           <h2
             className={`${
@@ -48,7 +45,7 @@ export default function AboutParagraph({
         width={1200}
         height={1200}
         placeholder="blur"
-        className={`lg:flex-1 rounded-[5px] md:rounded-[10px] w-full min-h-[366px] object-about object-cover ${
+        className={`rounded-[5px] md:rounded-[10px] w-full min-h-[366px] object-about object-cover ${
           theme === "light" ? "border-black/20" : "border-white/20"
         } border-[2px]`}
       />
