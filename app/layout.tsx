@@ -58,6 +58,12 @@ export default function RootLayout({
               language === "en" ? "Developer" : "Udvikler"
             } & Designer - Portfolio`}
         </title>
+        "
+        <link
+          rel="shortcut icon"
+          href={theme === "light" ? "favicon-light.ico" : "favicon-dark.ico"}
+          type="image/x-icon"
+        />
         <meta
           name="description"
           content="I'm a frontend/fullstack web developer with a passion for creating stunning web applications using React, Next.js, and TypeScript. Explore my portfolio to see my design-driven development work."
