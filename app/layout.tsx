@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import './globals.css';
-import { Barlow } from 'next/font/google';
-import { useStore } from './store';
-import Navbar from '@/components/navigation/Navbar';
-import CTA from '@/components/cta/CTA';
-import Footer from '@/components/footer/Footer';
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import "./globals.css";
+import { Barlow } from "next/font/google";
+import { useStore } from "./store";
+import Navbar from "@/components/navigation/Navbar";
+import CTA from "@/components/cta/CTA";
+import Footer from "@/components/footer/Footer";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export default function RootLayout({
@@ -24,25 +24,25 @@ export default function RootLayout({
   const language = useStore((state) => state.language);
 
   const pathname = usePathname();
-  const pathSplit = pathname.split('/');
-  let title = '';
+  const pathSplit = pathname.split("/");
+  let title = "";
   if (pathSplit.length > 2) {
     const titleFormatted = pathSplit[2]
-      .split('-')
+      .split("-")
       .map((word) => word[0].toUpperCase() + word.slice(1))
-      .join(' ');
+      .join(" ");
     title = `${titleFormatted} | `;
   } else {
     title =
-      pathname === '/'
-        ? ''
-        : pathname === '/about'
-        ? `${language === 'en' ? 'About Me' : 'Om Mig'} | `
-        : pathname === '/works'
-        ? `${language === 'en' ? 'Works' : 'Projekter'} | `
-        : pathname === '/contact'
-        ? `${language === 'en' ? 'Contact Me' : 'Kontakt Mig'} | `
-        : '';
+      pathname === "/"
+        ? ""
+        : pathname === "/about"
+        ? `${language === "en" ? "About Me" : "Om Mig"} | `
+        : pathname === "/works"
+        ? `${language === "en" ? "Works" : "Projekter"} | `
+        : pathname === "/contact"
+        ? `${language === "en" ? "Contact Me" : "Kontakt Mig"} | `
+        : "";
   }
 
   useEffect(() => {
@@ -55,8 +55,8 @@ export default function RootLayout({
         <title>
           {title +
             `Frederik Barbre - Frontend/Fullstack ${
-              language === 'en' ? 'Developer' : 'Udvikler'
-            } & Designer`}
+              language === "en" ? "Developer" : "Udvikler"
+            } & Designer - Portfolio`}
         </title>
         <meta
           name="description"
@@ -64,13 +64,13 @@ export default function RootLayout({
         />
         <meta
           name="keywords"
-          content="React, Next.js, TypeScript, Web Development, UI/UX Design, Frontend Development"
+          content="React, Next.js, TypeScript, Web Development, UI/UX Design, Frontend Development, Portfolio"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://frederikbarbre.dk/works" />
         <meta
           property="og:title"
-          content="Frederik Barbre - Frontend/Fullstack Developer & Designer"
+          content="Frederik Barbre - Frontend/Fullstack Developer & Designer - Portfolio"
         />
         <meta
           property="og:description"
@@ -84,7 +84,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Frederik Barbre - Frontend/Fullstack Developer & Designer"
+          content="Frederik Barbre - Frontend/Fullstack Developer & Designer - Portfolio"
         />
         <meta
           name="twitter:description"
@@ -94,12 +94,16 @@ export default function RootLayout({
           name="twitter:image"
           content="https://frederikbarbre.dk/images/hero.png"
         />
+        <meta name="geo.region" content="DK" />
+        <meta name="geo.placename" content="Aarhus" />
+        <meta name="geo.position" content="56.1629;10.2039" />
+        <meta name="ICBM" content="56.1629, 10.2039" />
       </head>
       <body
         className={`${barlow.className} ${
-          theme === 'light'
-            ? 'text-near-black bg-white'
-            : 'bg-near-black text-white'
+          theme === "light"
+            ? "text-near-black bg-white"
+            : "bg-near-black text-white"
         } transition-colors`}
       >
         {isClient && (
