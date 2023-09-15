@@ -127,7 +127,7 @@ export default function Form() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="px-[24px] md:px-[103px] flex flex-col lg:flex-row gap-[50px] lg:gap-[75px] mb-[100px]"
+        className="px-sm md:px-md flex flex-col lg:flex-row gap-[50px] lg:gap-[75px] mb-[100px]"
       >
         <div
           className={`flex flex-col gap-[25px] md:gap-[50px] w-full ${
@@ -222,7 +222,7 @@ export default function Form() {
         isOpen={isPopUpOpen}
         isDissmissable
       >
-        <section className="flex flex-col gap-[16px] relative p-[24px]">
+        <section className="flex flex-col gap-[16px] relative p-sm">
           <h2
             className={`text-[26px] tracking-[1.56px] uppercase text-center font-bold ${
               theme === 'light' ? 'text-primary-light' : 'text-primary-dark'

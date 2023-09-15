@@ -40,6 +40,12 @@ const config: Config = {
       gridTemplateRows: {
         filters: 'max-content 1fr',
       },
+      padding: {
+        "navbar-inline": "29px",
+        "sm": "24px",
+        "md": "103px",
+        "lg": "147px"
+      }
     },
   },
   plugins: [],

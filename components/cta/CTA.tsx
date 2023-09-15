@@ -30,7 +30,7 @@ export default function CTA() {
           {language === 'en' ? 'Socials' : 'Sociale Medier'}
         </h2>
         <article
-          className={`px-[24px] md:px-[103px] lg:px-[147px] flex gap-[20px] flex-col md:flex-row md:items-center justify-between md:mb-[66px] ${
+          className={`px-sm md:px-md lg:px-lg flex gap-[20px] flex-col md:flex-row md:items-center justify-between md:mb-[66px] ${
             pathname !== '/contact' ? 'mb-[50px]' : 'mb-[30px]'
           }`}
         >

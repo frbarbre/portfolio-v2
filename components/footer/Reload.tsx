@@ -33,7 +33,7 @@ export default function Reload({
               theme === 'light'
                 ? 'bg-white border-[#CCCCCC]'
                 : 'bg-near-black border-[#4B4B4B]'
-            } border-[2px] px-[24px] py-[18px] rounded-[10px] relative overflow-hidden`}
+            } border-[2px] px-sm py-[18px] rounded-[10px] relative overflow-hidden`}
           >
             <p className="uppercase text-[14px] font-semibold tracking-[0.84px]">
               {language === 'en' ? enText : daText}

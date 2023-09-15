@@ -53,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <main
+    <section
       className="relative flex min-h-hero overflow-hidden bg-no-repeat bg-cover"
       onMouseEnter={() => setIsCursorActive(true)}
       onMouseLeave={() => setIsCursorActive(false)}
@@ -78,6 +78,6 @@ export default function Hero() {
         enText="Scroll"
         daText="Scroll"
       />
-    </main>
+    </section>
   );
 }

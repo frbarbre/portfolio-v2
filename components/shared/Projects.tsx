@@ -32,7 +32,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
         </h2>
       )}
       <div
-        className={`flex-col items-center hidden justify-center px-[103px] ${
+        className={`flex-col items-center hidden justify-center px-md ${
           motion === 'true' ? 'lg:flex' : 'hidden'
         }`}
       >
@@ -56,7 +56,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
       <div
         className={`grid grid-cols-1 md:grid-cols-2 ${
           pathname !== '/' && 'lg:grid-cols-3'
-        } gap-[30px] md:gap-[45px] px-[24px] md:px-[103px] ${
+        } gap-[30px] md:gap-[45px] px-sm md:px-md ${
           motion === 'true' && 'lg:hidden'
         }`}
       >
@@ -85,12 +85,38 @@ export default function Projects({ projects }: { projects: Project[] }) {
           className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
           onClick={() => setProjectsLoaded((prev) => prev + 12)}
         >
-          <SquareButton
-            daText="Indlæs Flere"
-            enText="Load More"
-            variant="std"
-          />
+          <div className="max-w-[236px] w-full lg:hidden">
+            <SquareButton
+              daText="Indlæs Flere"
+              enText="Load More"
+              variant="std"
+            />
+          </div>
+          <div className="max-w-[236px] w-full hidden lg:block">
+            <Magnetic>
+              <SquareButton
+                daText="Indlæs Flere"
+                enText="Load More"
+                variant="std"
+              />
+            </Magnetic>
+          </div>
         </m.div>
+      )}
+      {pathname === '/works' && (
+        <Link
+          href={'/works/archive'}
+          className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
+        >
+          <div className="max-w-[236px] w-full lg:hidden">
+            <SquareButton daText="Gå til arkiv" enText="Go to archive" variant="std" />
+          </div>
+          <div className="max-w-[236px] w-full hidden lg:block">
+            <Magnetic>
+              <SquareButton daText="Gå til arkiv" enText="Go to archive" variant="std" />
+            </Magnetic>
+          </div>
+        </Link>
       )}
       <Modal modal={modal} projects={projects} />
 

@@ -33,7 +33,7 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                 : 'border-b-white/20 bg-near-black'
             }`}
           >
-            <div className="flex item-center justify-between max-w-custom mx-auto px-[24px] xl:px-[103px] md:pt-[75px] md:pb-[69px] py-[42px]">
+            <div className="flex item-center justify-between max-w-custom mx-auto px-sm xl:px-md md:pt-[75px] md:pb-[69px] py-[42px]">
               <nav className="flex flex-wrap lg:max-w-[880px] flex-col md:flex-row md:gap-x-[35px]">
                 {navLinks.map((link, index) => (
                   <m.div

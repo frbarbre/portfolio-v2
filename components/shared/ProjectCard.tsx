@@ -10,7 +10,7 @@ export default function ProjectCard({
   type,
   setModal,
   slug,
-  delay
+  delay,
 }: {
   index: number;
   title: string;
@@ -27,7 +27,7 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ delay: delay * 0.05 + 0.45, duration: 0.25}}
+      transition={{ delay: delay * 0.05 + 0.45, duration: 0.25 }}
       className="w-full"
     >
       <Link href={`/works/${slug}`} className="w-full">
@@ -50,10 +50,12 @@ export default function ProjectCard({
             {title}
           </h2>
           <p className="group-hover:translate-x-[10px] uppercase text-[16px] font-bold tracking-[0.96px] transition-all duration-[400ms] group-hover:opacity-50">
-            {type === 'design & development' && language === 'da'
+            {type === 'design&development' && language === 'da'
               ? 'design & udvikling'
               : type === 'development' && language === 'da'
               ? 'udvikling'
+              : type === 'design&development' && language === 'en'
+              ? 'design & development'
               : type}
           </p>
         </div>

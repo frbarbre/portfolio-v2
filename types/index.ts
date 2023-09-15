@@ -25,13 +25,13 @@ export interface Acf {
 export enum Tools {
   react = 'react',
   next = 'next.js',
-  tailwind = 'tailwind css',
+  tailwind = 'tailwindcss',
   typescript = 'typescript',
   javascript = 'javascript',
   svelte = 'svelte',
   astro = 'astro',
   zustand = 'zustand',
-  framermotion = 'framer motion',
+  framermotion = 'framermotion',
   gsap = 'gsap',
   mongodb = 'mongodb',
   graphql = 'graphql',
@@ -65,7 +65,7 @@ export enum Image {
 }
 
 export enum ProjectType {
-  DesignDevelopment = 'design & development',
+  DesignDevelopment = 'design&development',
   Development = 'development',
 }
 
@@ -81,4 +81,8 @@ export interface FormType {
   name: string;
   email: string;
   message: string;
+}
+
+export interface FilterSearchParams {
+  filter: string[];
 }

@@ -29,7 +29,7 @@ export default function AboutParagraph({
     <section
       className={`flex flex-col gap-[30px] lg:gap-[114px] ${
         isReverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
-      } justify-between px-[24px] md:px-[103px] items-center`}
+      } justify-between px-sm md:px-md items-center`}
     >
       <article className="flex-1">
         {enTitle !== '' && (
@@ -72,7 +72,7 @@ export default function AboutParagraph({
         alt="Picture of Frederik Barbre"
         width={1200}
         height={1200}
-        placeholder='blur'
+        placeholder="blur"
         className={`lg:flex-1 rounded-[5px] md:rounded-[10px] w-full min-h-[366px] object-about object-cover ${
           theme === 'light' ? 'border-black/20' : 'border-white/20'
         } border-[2px]`}

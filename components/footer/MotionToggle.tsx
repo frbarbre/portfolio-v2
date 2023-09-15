@@ -91,7 +91,7 @@ export default function MotionToggle() {
       />
       <PopUpModal isOpen={isFirstTime} setIsOpen={handleFirstTime}>
         <section
-          className={`p-[24px] border-[2px] rounded-[10px] flex flex-col items-center gap-2 ${
+          className={`p-sm border-[2px] rounded-[10px] flex flex-col items-center gap-2 ${
             theme === 'light' ? 'border-black/20' : 'border-white/20'
           }`}
         >

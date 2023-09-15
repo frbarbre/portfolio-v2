@@ -11,13 +11,12 @@ export default function LanguageSwitcher() {
 
   useEffect(() => {
     if (localStorage.getItem('language') === null) {
-      if (navigator.language === 'da') {
+      if (navigator.language.includes('da')) {
         setLanguage('da');
-      }
-      else {
+      } else {
         setLanguage('en');
       }
-      return
+      return;
     }
     if (localStorage.getItem('language') === 'da') {
       setLanguage('da');
@@ -38,8 +37,7 @@ export default function LanguageSwitcher() {
         lang="en"
         language={language}
         theme={theme}
-      />
-      {" "}
+      />{' '}
       <LanguageSwitch
         handleLanguage={handleLanguage}
         lang="da"

@@ -3,6 +3,7 @@ import { filtersData } from '@/constants';
 import Image from 'next/image';
 import FilterChoice from './FilterChoice';
 import { motion as m, AnimatePresence } from 'framer-motion';
+import { FilterSearchParams } from '@/types';
 
 export default function Filter({
   isFilterActive,
@@ -10,12 +11,14 @@ export default function Filter({
   filters,
   handleAdd,
   handleReset,
+  searchParams
 }: {
   isFilterActive: boolean;
   setIsFilterActive: Function;
   filters: string[];
   handleAdd: (filter: string) => void;
   handleReset: () => void;
+  searchParams?: FilterSearchParams;
 }) {
   const theme = useStore((state) => state.theme);
   const language = useStore((state) => state.language);
@@ -41,7 +44,7 @@ export default function Filter({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-                className="overflow-y-scroll md:overflow-y-visible h-full p-[24px] md:p-[46px]"
+                className="overflow-y-scroll md:overflow-y-visible h-full p-sm md:p-[46px]"
               >
                 <div className="flex flex-col lg:grid lg:grid-cols-filters md:gap-x-[40px] gap-y-[20px] md:gap-y-[30px] lg:gap-x-[108px]">
                   {filtersData.map((filter, masterIndex) => (
@@ -86,7 +89,7 @@ export default function Filter({
                 alt="Close Button"
                 width={20}
                 height={20}
-                className="absolute md:right-[52px] md:top-[52px] right-[24px] top-[24px] cursor-pointer"
+                className="absolute md:right-[52px] md:top-[52px] right-[24px] top-sm cursor-pointer"
                 onClick={() => setIsFilterActive(false)}
               />
             </m.article>

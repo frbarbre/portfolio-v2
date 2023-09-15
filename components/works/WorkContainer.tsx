@@ -3,19 +3,34 @@
 import Projects from '../shared/Projects';
 import Heading from '../shared/Heading';
 import SquareButton from '../shared/SquareButton';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Magnetic from '../shared/Magnetic';
-import { Catagory, Project, ProjectType } from '@/types';
+import { Catagory, FilterSearchParams, Project, ProjectType } from '@/types';
 import Filter from './Filter';
 import { filterHelper } from '@/utils/filterHelper';
 import FilterTag from './FilterTag';
 import { AnimatePresence } from 'framer-motion';
 import { skills } from '@/constants';
 import NotFound from './NotFound';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import BackButton from '../work/BackButton';
 
-export default function WorksContainer({ projects }: { projects: Project[] }) {
+export default function WorksContainer({
+  projects,
+  isArchive,
+  searchParams,
+}: {
+  projects: Project[];
+  isArchive?: boolean;
+  searchParams?: FilterSearchParams;
+}) {
+  const searchParameters = useSearchParams();
+  const filterParams = searchParameters.getAll('filter');
+
+  const router = useRouter();
+  const pathname = usePathname();
   const [isFilterActive, setIsFilterActive] = useState(false);
-  const [filters, setFilters] = useState<string[]>([]);
+  const [filters, setFilters] = useState<string[]>(filterParams || []);
 
   const allFilters = [
     Catagory.Frontend,
@@ -24,6 +39,21 @@ export default function WorksContainer({ projects }: { projects: Project[] }) {
     ProjectType.Development,
     ...skills.map((skill) => skill.id),
   ];
+
+  useEffect(() => {
+    if (!pathname.includes('/archive')) {
+      setFilters([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (pathname.includes('/archive')) {
+      const filterString = filters
+        .map((filter) => `filter=${filter}`)
+        .join('&');
+      router.push(`?${filterString}`);
+    }
+  }, [filters, router]);
 
   function handleAdd(filter: string) {
     const isFilterActive = filters.find((data) => data === filter);
@@ -45,7 +75,7 @@ export default function WorksContainer({ projects }: { projects: Project[] }) {
     setFilters([]);
   }
 
-  const filteredProjects = projects.filter((project) =>
+  let filteredProjects = projects.filter((project) =>
     filters.every(
       (catagory) =>
         Object.values(project.acf).includes(catagory) ||
@@ -56,22 +86,31 @@ export default function WorksContainer({ projects }: { projects: Project[] }) {
   return (
     <>
       <section className="flex justify-between items-center gap-[12px] flex-wrap mt-[50px] mb-[20px] mx-[24px] md:mt-[100px] md:mb-[32px] md:mx-[103px] relative">
-        <Heading daText="Projekter" enText="Works" isFlex />
-
-        <div
-          className="w-full max-w-[130px] md:max-w-[188px] cursor-pointer z-10 relative"
-          onClick={() => setIsFilterActive(!isFilterActive)}
-        >
-          <div className="lg:hidden w-full">
-            <SquareButton daText="Filter" enText="Filter" variant="icon" />
-          </div>
-          <div className="hidden lg:block w-full translate-x-[12px]">
-            <Magnetic>
+        <article className='flex gap-8 items-center'>
+          {pathname.includes('/archive') && <BackButton />}
+          <Heading
+            daText={isArchive ? 'Arkiv' : 'Projekter'}
+            enText={isArchive ? 'Archive' : 'Works'}
+            isFlex
+          />
+        </article>
+        {isArchive && (
+          <div
+            className="w-full max-w-[130px] md:max-w-[188px] cursor-pointer z-10 relative"
+            onClick={() => setIsFilterActive(!isFilterActive)}
+          >
+            <div className="lg:hidden w-full">
               <SquareButton daText="Filter" enText="Filter" variant="icon" />
-            </Magnetic>
+            </div>
+            <div className="hidden lg:block w-full translate-x-[12px]">
+              <Magnetic>
+                <SquareButton daText="Filter" enText="Filter" variant="icon" />
+              </Magnetic>
+            </div>
           </div>
-        </div>
+        )}
         <Filter
+          searchParams={searchParams}
           isFilterActive={isFilterActive}
           setIsFilterActive={setIsFilterActive}
           filters={filters}
@@ -79,7 +118,7 @@ export default function WorksContainer({ projects }: { projects: Project[] }) {
           handleReset={handleReset}
         />
       </section>
-      <div className="min-h-[42.8px] md:mb-[32px] mb-[20px] flex gap-[12px] lg:gap-[24px] mx-[24px] md:mx-[103px] flex-wrap">
+      <div className="min-h-[42.8px] md:mb-[32px] mb-[20px] flex gap-[12px] lg:gap-sm mx-[24px] md:mx-[103px] flex-wrap">
         {allFilters.map((filter) => (
           <Fragment key={filter}>
             <AnimatePresence>

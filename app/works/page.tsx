@@ -4,11 +4,12 @@ import { sortProjects } from "@/utils/sortProjects";
 
 export default async function Works() {
   const projects = await fetchProjects();
-  sortProjects(projects);
+  const featuredProjects = projects.filter((project) => project.acf.isFeatured);
+  sortProjects(featuredProjects);
 
   return (
     <section className="max-w-custom mx-auto">
-      <WorksContainer projects={projects} />
+      <WorksContainer projects={featuredProjects} />
     </section>
   );
 }

@@ -13,8 +13,8 @@ export default async function Work({ params }: { params: { slug: string } }) {
   if (!currentProject) return null;
 
   return (
-    <div className="px-[24px] md:px-[103px]">
-      <BackButton />
+    <div className="px-sm md:px-md">
+      <BackButton isInArchive={currentProject.acf.isFeatured ? false : true} />
       <section className="max-w-[980px] mx-auto">
         <ImageSlider project={currentProject} />
         <ImageControls
