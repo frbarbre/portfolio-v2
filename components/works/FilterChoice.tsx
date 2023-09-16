@@ -21,7 +21,7 @@ export default function FilterChoice({
   const theme = useStore((state) => state.theme);
 
   return (
-    <li
+    <button
       className="flex gap-2 items-center group cursor-pointer relative font-bold uppercase text-[12px] tracking-[0.72px] md:text-[16px] md:tracking-[0.96px] w-max"
       onClick={() => handleAdd(id)}
     >
@@ -50,6 +50,6 @@ export default function FilterChoice({
       </span>
 
       {language === "en" ? enText : daText}
-    </li>
+    </button>
   );
 }
