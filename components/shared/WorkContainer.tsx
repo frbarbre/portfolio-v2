@@ -126,17 +126,13 @@ export default function WorksContainer({
                 <>
                   {filters.length > 0 && (
                     <>
-                      <div className="hidden lg:block">
-                        <Magnetic padding="false">
-                          <FilterTag
-                            name={filter}
-                            handleRemove={handleRemove}
-                          />
-                        </Magnetic>
-                      </div>
-                      <div className="lg:hidden">
+                      <Magnetic padding="false">
                         <FilterTag name={filter} handleRemove={handleRemove} />
-                      </div>
+                      </Magnetic>
+
+                      <span className="lg:hidden block">
+                        <FilterTag name={filter} handleRemove={handleRemove} />
+                      </span>
                     </>
                   )}
                 </>

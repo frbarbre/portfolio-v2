@@ -129,13 +129,13 @@ export default function MotionToggle() {
               {language === "en" ? "ON" : "TIL"}
             </p>
           </div>
-          <div onClick={handleFirstTime} className="w-full max-w-[250px]">
+          <button onClick={handleFirstTime} className="w-full max-w-[250px]">
             <SquareButton
               enText="Apply Changes"
               daText="Anvend ændringer"
               variant="reload"
             />
-          </div>
+          </button>
           <p className="text-[10px] tracking-[0.6px] pt-[6px]">
             {language === "en"
               ? "Setting can be changed at any time in the footer."
