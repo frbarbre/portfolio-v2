@@ -47,7 +47,7 @@ export default function Icon({
             exit={{ scale: 0 }}
             className={`absolute ${
               padding ? 'bottom-[-38px]' : 'bottom-[-26px]'
-            } rounded-[6px] px-[15px] py-[6px] text-center w-max translate-x-[-50%] left-[50%] flex items-center justify-center ${
+            } rounded-[6px] px-[15px] py-[6px] text-center w-max translate-x-[-50%] left-[50%] hidden lg:flex items-center justify-center ${
               theme === 'light'
                 ? 'bg-primary-light text-white'
                 : 'bg-primary-dark text-near-black'
