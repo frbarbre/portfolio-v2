@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import Projects from '../shared/Projects';
-import Heading from '../shared/Heading';
-import SquareButton from '../shared/SquareButton';
-import { Fragment, useEffect, useState } from 'react';
-import Magnetic from '../shared/Magnetic';
-import { Catagory, FilterSearchParams, Project, ProjectType } from '@/types';
-import Filter from './Filter';
-import { filterHelper } from '@/utils/filterHelper';
-import FilterTag from './FilterTag';
-import { AnimatePresence } from 'framer-motion';
-import { skills } from '@/constants';
-import NotFound from './NotFound';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import BackButton from '../work/BackButton';
+import Projects from "./Projects";
+import Heading from "./Heading";
+import SquareButton from "./SquareButton";
+import { Fragment, useEffect, useState } from "react";
+import Magnetic from "./Magnetic";
+import { Catagory, FilterSearchParams, Project, ProjectType } from "@/types";
+import Filter from "../works/Filter";
+import { filterHelper } from "@/utils/filterHelper";
+import FilterTag from "../works/FilterTag";
+import { AnimatePresence } from "framer-motion";
+import { skills } from "@/constants";
+import NotFound from "../works/NotFound";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import BackButton from "./BackButton";
 
 export default function WorksContainer({
   projects,
@@ -25,7 +25,7 @@ export default function WorksContainer({
   searchParams?: FilterSearchParams;
 }) {
   const searchParameters = useSearchParams();
-  const filterParams = searchParameters.getAll('filter');
+  const filterParams = searchParameters.getAll("filter");
 
   const router = useRouter();
   const pathname = usePathname();
@@ -41,16 +41,16 @@ export default function WorksContainer({
   ];
 
   useEffect(() => {
-    if (!pathname.includes('/archive')) {
+    if (!pathname.includes("/archive")) {
       setFilters([]);
     }
   }, []);
 
   useEffect(() => {
-    if (pathname.includes('/archive')) {
+    if (pathname.includes("/archive")) {
       const filterString = filters
         .map((filter) => `filter=${filter}`)
-        .join('&');
+        .join("&");
       router.push(`?${filterString}`);
     }
   }, [filters, router]);
@@ -85,28 +85,28 @@ export default function WorksContainer({
 
   return (
     <>
-      <section className="flex justify-between items-center gap-[12px] flex-wrap mt-[50px] mb-[20px] mx-[24px] md:mt-[100px] md:mb-[32px] md:mx-[103px] relative">
-        <article className='flex gap-8 items-center'>
-          {pathname.includes('/archive') && <BackButton />}
-          <Heading
-            daText={isArchive ? 'Arkiv' : 'Projekter'}
-            enText={isArchive ? 'Archive' : 'Works'}
-            isFlex
-          />
-        </article>
+      <section className="flex gap-[8px] md:gap-[16px] items-center flex-wrap mt-[50px] mb-[20px] mx-[24px] md:mt-[100px] md:mb-[32px] md:mx-[103px] relative">
+        {pathname.includes("/archive") && <BackButton href="/works" />}
+        <Heading
+          daText={isArchive ? "Arkiv" : "Projekter"}
+          enText={isArchive ? "Archive" : "Works"}
+          isFlex
+        />
+
         {isArchive && (
-          <div
-            className="w-full max-w-[130px] md:max-w-[188px] cursor-pointer z-10 relative"
-            onClick={() => setIsFilterActive(!isFilterActive)}
-          >
-            <div className="lg:hidden w-full">
-              <SquareButton daText="Filter" enText="Filter" variant="icon" />
-            </div>
-            <div className="hidden lg:block w-full translate-x-[12px]">
-              <Magnetic>
+          <div className="flex-1 flex justify-end">
+            <button
+              className="w-full max-w-[130px] md:max-w-[188px] cursor-pointer z-10 relative"
+              onClick={() => setIsFilterActive(!isFilterActive)}
+            >
+              <span className="lg:hidden w-full">
+                <SquareButton daText="Filter" enText="Filter" variant="icon" />
+              </span>
+
+              <Magnetic padding="p-0">
                 <SquareButton daText="Filter" enText="Filter" variant="icon" />
               </Magnetic>
-            </div>
+            </button>
           </div>
         )}
         <Filter
@@ -126,17 +126,13 @@ export default function WorksContainer({
                 <>
                   {filters.length > 0 && (
                     <>
-                      <div className="hidden lg:block">
-                        <Magnetic padding="false">
-                          <FilterTag
-                            name={filter}
-                            handleRemove={handleRemove}
-                          />
-                        </Magnetic>
-                      </div>
-                      <div className="lg:hidden">
+                      <Magnetic padding="false">
                         <FilterTag name={filter} handleRemove={handleRemove} />
-                      </div>
+                      </Magnetic>
+
+                      <span className="lg:hidden block">
+                        <FilterTag name={filter} handleRemove={handleRemove} />
+                      </span>
                     </>
                   )}
                 </>

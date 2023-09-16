@@ -1,36 +1,35 @@
-import { skills } from '@/constants';
-import Magnetic from '../../shared/Magnetic';
-import Icon from '../../shared/Icon';
-import { useState } from 'react';
+import { skills } from "@/constants";
+import Magnetic from "../../shared/Magnetic";
+import Icon from "../../shared/Icon";
+import { useState } from "react";
 
 export default function SkillIcons() {
   const featuredSkills = skills.filter((skill) => skill.isFeatured);
 
-  const [isMouseOver, setIsMouseOver] = useState('');
+  const [isMouseOver, setIsMouseOver] = useState("");
 
   return (
-    <section className="flex flex-wrap justify-center md:justify-start md:translate-x-[-12px] pt-[18px]">
+    <ul className="flex flex-wrap justify-center md:justify-start md:translate-x-[-12px] pt-[18px]">
       {featuredSkills.map((skill) => (
-        <div
+        <li
           onMouseEnter={() => setIsMouseOver(skill.title)}
-          onMouseLeave={() => setIsMouseOver('')}
+          onMouseLeave={() => setIsMouseOver("")}
           key={skill.id}
         >
-          <div className="hidden lg:block">
-            <Magnetic>
-              <Icon
-                icon={skill.icon}
-                name={skill.title}
-                link={skill.link}
-                isMouseOver={isMouseOver}
-              />
-            </Magnetic>
-          </div>
-          <div className="lg:hidden p-[12px] relative">
+          <Magnetic>
+            <Icon
+              icon={skill.icon}
+              name={skill.title}
+              link={skill.link}
+              isMouseOver={isMouseOver}
+            />
+          </Magnetic>
+
+          <span className="lg:hidden p-[12px] relative block">
             <Icon icon={skill.icon} name={skill.title} link={skill.link} />
-          </div>
-        </div>
+          </span>
+        </li>
       ))}
-    </section>
+    </ul>
   );
 }

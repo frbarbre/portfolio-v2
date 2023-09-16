@@ -15,7 +15,7 @@ export default function Heading({
   const theme = useStore((state) => state.theme);
 
   return (
-    <h2
+    <h1
       className={`${
         theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
       } text-[28px] font-bold tracking-[1.68px] uppercase md:text-[62px] md:tracking-[3.72px] ${
@@ -23,6 +23,6 @@ export default function Heading({
       } `}
     >
       {language === 'en' ? enText : daText}
-    </h2>
+    </h1>
   );
 }

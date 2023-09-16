@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useStore } from '@/app/store';
-import { Fragment } from 'react';
-import Magnetic from '../shared/Magnetic';
-import RoundButton from '../shared/RoundButton';
+import { useStore } from "@/app/store";
+import { Fragment } from "react";
+import Magnetic from "../shared/Magnetic";
+import RoundButton from "../shared/RoundButton";
 
 interface Props {
   isChallenge: boolean;
@@ -27,107 +27,76 @@ export default function WorkDescription({
   const challengeType = handleChallengeType();
 
   function handleChallengeType() {
-    if (challengeUrl?.includes('youtube')) {
-      return 'tutorial';
-    } else if (challengeUrl?.includes('figma')) {
-      return 'design';
-    } else if (challengeUrl?.includes('scrimba')) {
-      return 'course';
+    if (challengeUrl?.includes("youtube")) {
+      return "tutorial";
+    } else if (challengeUrl?.includes("figma")) {
+      return "design";
+    } else if (challengeUrl?.includes("scrimba")) {
+      return "course";
     } else {
-      return 'challenge';
+      return "challenge";
     }
   }
 
-  const enSplit = enText.split('<br>');
-  const daSplit = daText.split('<br>');
-
   return (
-    <section className="flex items-center justify-between mb-[100px] flex-col md:flex-row gap-[76px]">
-      <p className="md:max-w-[530px] text-[20px] tracking-[1.2px]">
-        {language === 'en'
-          ? enSplit.map((text, index) => (
-              <Fragment key={index}>
-                {text}
-                {index < enSplit.length - 1 && (
-                  <>
-                    <br />
-                    <br />
-                  </>
-                )}
-              </Fragment>
-            ))
-          : daSplit.map((text, index) => (
-              <Fragment key={index}>
-                {text}
-                {index < daSplit.length - 1 && (
-                  <>
-                    <br />
-                    <br />
-                  </>
-                )}
-              </Fragment>
-            ))}
+    <article className="flex items-center justify-between mb-[100px] flex-col md:flex-row gap-[76px]">
+      <p className="md:max-w-[530px] text-[20px] tracking-[1.2px] whitespace-pre-line">
+        {language === "en" ? enText : daText}
         {isChallenge && (
-          <span className="">
+          <>
             <br />
             <br />
             <a
               className={`${
-                theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+                theme === "light" ? "text-primary-light" : "text-primary-dark"
               } underline hover:opacity-80 transition-opacity`}
               target="_blank"
               href={challengeUrl}
             >
               Go to {challengeType}
             </a>
-          </span>
+          </>
         )}
       </p>
       <div className="relative">
-        <div>
-          <div className="hidden lg:block">
-            <Magnetic padding="p-0">
-              <a href={liveUrl} target="_blank">
-                <RoundButton daText="Webside" enText="Live Site" variant="lg" />
-              </a>
-            </Magnetic>
-          </div>
+        <a href={liveUrl} target="_blank">
+          <Magnetic padding="p-0">
+            <RoundButton daText="Webside" enText="Live Site" variant="lg" />
+          </Magnetic>
+        </a>
 
-          <div className="lg:hidden">
-            <a href={liveUrl} target="_blank">
-              <RoundButton daText="Webside" enText="Live Site" variant="lg" />
-            </a>
-          </div>
-        </div>
+        <span className="lg:hidden">
+          <a href={liveUrl} target="_blank">
+            <RoundButton daText="Webside" enText="Live Site" variant="lg" />
+          </a>
+        </span>
 
         <div className="absolute top-[-45%] right-[-45%] translate-x-[-50%] translate-y-[50%]">
-          <div className="hidden lg:block">
+          <a
+            href={githubUrl}
+            target="_blank"
+            className={`${
+              theme === "light" ? "bg-white" : "bg-near-black"
+            } rounded-full block hover:bg-transparent`}
+          >
             <Magnetic padding="p-0">
-              <a
-                href={githubUrl}
-                target="_blank"
-                className={`${
-                  theme === 'light' ? 'bg-white' : 'bg-near-black'
-                } rounded-full block hover:bg-transparent`}
-              >
-                <RoundButton fill daText="Kode" enText="Code" variant="sm" />
-              </a>
+              <RoundButton fill daText="Kode" enText="Code" variant="sm" />
             </Magnetic>
-          </div>
+          </a>
 
-          <div className="lg:hidden">
+          <span className="lg:hidden">
             <a
               href={githubUrl}
               target="_blank"
               className={`${
-                theme === 'light' ? 'bg-white' : 'bg-near-black'
+                theme === "light" ? "bg-white" : "bg-near-black"
               } rounded-full block hover:bg-transparent`}
             >
               <RoundButton fill daText="Kode" enText="Code" variant="sm" />
             </a>
-          </div>
+          </span>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

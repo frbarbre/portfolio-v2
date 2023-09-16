@@ -54,7 +54,7 @@ export default function ScrollCursor({
   }, []);
 
   return (
-    <div className="hidden lg:block">
+    <div className={`hidden ${motion === "true" && "lg:block"}`}>
       <m.div
         ref={cursor}
         className={`w-[80px] h-[80px] rounded-full ${

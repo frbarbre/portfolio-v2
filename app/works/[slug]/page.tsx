@@ -1,9 +1,9 @@
-import BackButton from '@/components/work/BackButton';
-import ImageControls from '@/components/work/ImageControls';
-import ImageSlider from '@/components/work/ImageSlider';
-import WorkDescription from '@/components/work/WorkDescription';
-import WorkDetails from '@/components/work/WorkDetails';
-import { fetchProjects } from '@/utils/fetchProjects';
+import BackButton from "@/components/shared/BackButton";
+import ImageControls from "@/components/work/ImageControls";
+import ImageSlider from "@/components/work/ImageSlider";
+import WorkDescription from "@/components/work/WorkDescription";
+import WorkDetails from "@/components/work/WorkDetails";
+import { fetchProjects } from "@/utils/fetchProjects";
 
 export default async function Work({ params }: { params: { slug: string } }) {
   const projects = await fetchProjects();
@@ -13,7 +13,7 @@ export default async function Work({ params }: { params: { slug: string } }) {
   if (!currentProject) return null;
 
   return (
-    <div className="px-sm md:px-md">
+    <div className="px-sm md:px-md max-w-custom mx-auto">
       <BackButton isInArchive={currentProject.acf.isFeatured ? false : true} />
       <section className="max-w-[980px] mx-auto">
         <ImageSlider project={currentProject} />

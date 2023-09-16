@@ -1,7 +1,7 @@
-import WorksContainer from '@/components/works/WorkContainer';
-import { FilterSearchParams } from '@/types';
-import { fetchProjects } from '@/utils/fetchProjects';
-import { sortProjects } from '@/utils/sortProjects';
+import WorksContainer from "@/components/shared/WorkContainer";
+import { FilterSearchParams } from "@/types";
+import { fetchProjects } from "@/utils/fetchProjects";
+import { sortProjects } from "@/utils/sortProjects";
 
 export default async function Archive({
   searchParams,
@@ -15,12 +15,12 @@ export default async function Archive({
   sortProjects(archivedProjects);
 
   return (
-    <section className="max-w-custom mx-auto">
+    <div className="max-w-custom mx-auto">
       <WorksContainer
         isArchive
         projects={archivedProjects}
         searchParams={searchParams}
       />
-    </section>
+    </div>
   );
 }
