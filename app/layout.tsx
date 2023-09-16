@@ -58,7 +58,6 @@ export default function RootLayout({
               language === "en" ? "Developer" : "Udvikler"
             } & Designer - Portfolio`}
         </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
           content="I'm a frontend/fullstack web developer with a passion for creating stunning web applications using React, Next.js, and TypeScript. Explore my portfolio to see my design-driven development work."
