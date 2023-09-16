@@ -5,9 +5,11 @@ import { useStore } from '@/app/store';
 export default function Magnetic({
   children,
   padding,
+  width
 }: {
   children: React.ReactNode;
   padding?: string;
+  width?: string;
 }) {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -30,8 +32,8 @@ export default function Magnetic({
 
   const { x, y } = position;
   return (
-    <m.div
-      className={`relative ${!padding && 'p-[12px]'} w-full`}
+    <m.span
+      className={`relative ${!padding && 'p-[12px]'} hidden lg:block ${width}`}
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
@@ -39,6 +41,6 @@ export default function Magnetic({
       transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
     >
       {children}
-    </m.div>
+    </m.span>
   );
 }

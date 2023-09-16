@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { Project } from '@/types';
-import ProjectCard from './ProjectCard';
-import { Fragment, useState } from 'react';
-import Modal from './Modal';
-import StaticProjectCard from './StaticProjectCard';
-import { usePathname } from 'next/navigation';
-import { useStore } from '@/app/store';
-import Link from 'next/link';
-import SquareButton from './SquareButton';
-import Magnetic from './Magnetic';
-import { motion as m } from 'framer-motion';
+import { Project } from "@/types";
+import ProjectCard from "./ProjectCard";
+import { Fragment, useState } from "react";
+import Modal from "./Modal";
+import StaticProjectCard from "./StaticProjectCard";
+import { usePathname } from "next/navigation";
+import { useStore } from "@/app/store";
+import Link from "next/link";
+import SquareButton from "./SquareButton";
+import Magnetic from "./Magnetic";
+import { motion as m } from "framer-motion";
 
 export default function Projects({ projects }: { projects: Project[] }) {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -22,18 +22,18 @@ export default function Projects({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      {pathname === '/' && (
+      {pathname === "/" && (
         <h2
           className={`${
-            theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
-          } font-bold text-[20px] uppercase tracking-[1.2px] pl-[24px] pb-[30px] md:pl-[103px] md:pb-[50px]`}
+            theme === "light" ? "text-primary-light" : "text-primary-dark"
+          } font-bold text-[26px] uppercase tracking-[1.56px] pl-[24px] pb-[30px] md:pl-[103px] md:pb-[50px]`}
         >
-          {language === 'en' ? 'Newest Work' : 'Nyeste Projekter'}
+          {language === "en" ? "Newest Work" : "Nyeste Projekter"}
         </h2>
       )}
       <div
         className={`flex-col items-center hidden justify-center px-md ${
-          motion === 'true' ? 'lg:flex' : 'hidden'
+          motion === "true" ? "lg:flex" : "hidden"
         }`}
       >
         {projects.map((project, index) => {
@@ -55,9 +55,9 @@ export default function Projects({ projects }: { projects: Project[] }) {
       </div>
       <div
         className={`grid grid-cols-1 md:grid-cols-2 ${
-          pathname !== '/' && 'lg:grid-cols-3'
+          pathname !== "/" && "lg:grid-cols-3"
         } gap-[30px] md:gap-[45px] px-sm md:px-md ${
-          motion === 'true' && 'lg:hidden'
+          motion === "true" && "lg:hidden"
         }`}
       >
         {projects.map((project, index) => (
@@ -103,43 +103,44 @@ export default function Projects({ projects }: { projects: Project[] }) {
           </div>
         </m.div>
       )}
-      {pathname === '/works' && (
+      {pathname === "/works" && (
         <Link
-          href={'/works/archive'}
-          className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
+          href={"/works/archive"}
+          className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer max-w-[236px] mx-auto"
         >
-          <div className="max-w-[236px] w-full lg:hidden">
-            <SquareButton daText="Gå til arkiv" enText="Go to archive" variant="std" />
-          </div>
-          <div className="max-w-[236px] w-full hidden lg:block">
-            <Magnetic>
-              <SquareButton daText="Gå til arkiv" enText="Go to archive" variant="std" />
-            </Magnetic>
-          </div>
+          <span className="w-full lg:hidden">
+            <SquareButton
+              daText="Gå til arkiv"
+              enText="Go to archive"
+              variant="std"
+            />
+          </span>
+
+          <Magnetic width="w-full">
+            <SquareButton
+              daText="Gå til arkiv"
+              enText="Go to archive"
+              variant="std"
+            />
+          </Magnetic>
         </Link>
       )}
       <Modal modal={modal} projects={projects} />
 
-      {pathname === '/' && (
-        <>
-          <div className="hidden mt-[46px] mb-[100px] max-w-[254px] mx-auto lg:block">
-            <Magnetic>
-              <Link href={'/works'} className="w-full block">
-                <SquareButton
-                  enText="Show All"
-                  daText="Se Alle"
-                  variant="std"
-                />
-              </Link>
-            </Magnetic>
-          </div>
-
-          <div className="lg:hidden mt-[49px] mb-[100px] max-w-[254px] mx-auto">
-            <Link href={'/works'} className="w-full block">
+      {pathname === "/" && (
+        <div className="mt-[46px] mb-[100px] max-w-[254px] mx-auto">
+          <Magnetic>
+            <Link href={"/works"} className="w-full block">
               <SquareButton enText="Show All" daText="Se Alle" variant="std" />
             </Link>
-          </div>
-        </>
+          </Magnetic>
+
+          <span className="lg:hidden mt-[49px] mb-[100px] max-w-[254px] mx-auto">
+            <Link href={"/works"} className="w-full block">
+              <SquareButton enText="Show All" daText="Se Alle" variant="std" />
+            </Link>
+          </span>
+        </div>
       )}
     </>
   );

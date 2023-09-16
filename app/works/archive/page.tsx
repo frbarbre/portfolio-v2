@@ -15,12 +15,12 @@ export default async function Archive({
   sortProjects(archivedProjects);
 
   return (
-    <section className="max-w-custom mx-auto">
+    <div className="max-w-custom mx-auto">
       <WorksContainer
         isArchive
         projects={archivedProjects}
         searchParams={searchParams}
       />
-    </section>
+    </div>
   );
 }

@@ -10,8 +10,8 @@ export default async function FeaturedProjects() {
   const newestProjects = [FeaturedProjects[0], FeaturedProjects[1], FeaturedProjects[2], FeaturedProjects[3]];
 
   return (
-    <>
+    <section>
       <Projects projects={newestProjects} />
-    </>
+    </section>
   );
 }

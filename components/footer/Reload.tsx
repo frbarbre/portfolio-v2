@@ -24,7 +24,7 @@ export default function Reload({
     <>
       <AnimatePresence>
         {isActive && (
-          <m.div
+          <m.aside
             initial={{ y: 300, scaleX: 0 }}
             animate={{ y: 0, scaleX: 1 }}
             exit={{ y: 300, scaleX: 0 }}
@@ -40,7 +40,7 @@ export default function Reload({
               <p className="uppercase text-[14px] font-semibold tracking-[0.84px]">
                 {language === "en" ? enText : daText}
               </p>
-              <div onClick={handleSubmit} className="cursor-pointer w-max">
+              <button onClick={handleSubmit} className="cursor-pointer w-max">
                 <SquareButton
                   daText={`Genindlæs (${
                     timeLeft < 0 ? 0 : timeLeft.toFixed(0)
@@ -48,7 +48,7 @@ export default function Reload({
                   enText={`Reload (${timeLeft < 0 ? 0 : timeLeft.toFixed(0)})`}
                   variant="reload"
                 />
-              </div>
+              </button>
               <m.div
                 initial={{ width: "100%" }}
                 animate={{
@@ -60,7 +60,7 @@ export default function Reload({
                 }`}
               />
             </article>
-          </m.div>
+          </m.aside>
         )}
       </AnimatePresence>
     </>

@@ -1,6 +1,6 @@
-import { useStore } from '@/app/store';
-import { nanoid } from 'nanoid';
-import { motion as m, AnimatePresence } from 'framer-motion';
+import { useStore } from "@/app/store";
+import { nanoid } from "nanoid";
+import { motion as m, AnimatePresence } from "framer-motion";
 
 export default function FilterChoice({
   id,
@@ -21,15 +21,15 @@ export default function FilterChoice({
   const theme = useStore((state) => state.theme);
 
   return (
-    <article
-      className="flex gap-2 items-center group cursor-pointer relative"
+    <li
+      className="flex gap-2 items-center group cursor-pointer relative font-bold uppercase text-[12px] tracking-[0.72px] md:text-[16px] md:tracking-[0.96px] w-max"
       onClick={() => handleAdd(id)}
     >
-      <div
+      <span
         className={`w-[20px] h-[20px] ${
-          theme === 'light' ? 'border-primary-light' : 'border-primary-dark'
+          theme === "light" ? "border-primary-light" : "border-primary-dark"
         } border-[3px] ${
-          isRadio ? 'rounded-full p-[4px]' : 'rounded-[2.5px] p-[4px]'
+          isRadio ? "rounded-full p-[4px]" : "rounded-[2.5px] p-[4px]"
         } flex items-center justify-center`}
       >
         <AnimatePresence key={id}>
@@ -38,22 +38,18 @@ export default function FilterChoice({
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
-              transition={{ type: 'spring', duration: 0.1 }}
+              transition={{ type: "spring", duration: 0.1 }}
               className={`${
-                theme === 'light' ? 'bg-primary-light' : 'bg-primary-dark'
+                theme === "light" ? "bg-primary-light" : "bg-primary-dark"
               } ${
-                isRadio ? 'rounded-full aspect-square' : 'rounded-[1px]'
+                isRadio ? "rounded-full aspect-square" : "rounded-[1px]"
               } w-full h-full transition-opacity group-hover:opacity-80`}
             />
           )}
         </AnimatePresence>
-      </div>
-      <p
-        key={nanoid()}
-        className={`font-bold uppercase text-[12px] tracking-[0.72px] md:text-[16px] md:tracking-[0.96px] w-max`}
-      >
-        {language === 'en' ? enText : daText}
-      </p>
-    </article>
+      </span>
+
+      {language === "en" ? enText : daText}
+    </li>
   );
 }

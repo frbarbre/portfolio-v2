@@ -21,7 +21,7 @@ export default function RoundButton({
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   return (
-    <div
+    <span
       className={`${
         variant === 'lg'
           ? 'w-[173px] text-[18px] tracking-[1.08px]'
@@ -36,12 +36,12 @@ export default function RoundButton({
       onMouseEnter={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >
-      <p>{language === 'en' ? enText : daText}</p>
+      {language === 'en' ? enText : daText}
 
       <AnimatePresence>
         {isMouseOver && (
           <>
-            <m.div
+            <m.strong
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
@@ -52,6 +52,6 @@ export default function RoundButton({
           </>
         )}
       </AnimatePresence>
-    </div>
+    </span>
   );
 }

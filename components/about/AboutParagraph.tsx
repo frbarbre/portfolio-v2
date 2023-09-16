@@ -22,11 +22,11 @@ export default function AboutParagraph({
   const theme = useStore((state) => state.theme);
 
   return (
-    <section
+    <div
       className={`flex flex-col gap-[30px] lg:gap-[114px] lg:grid lg:grid-cols-2 justify-between px-sm md:px-md items-center`}
     >
-      <article className={`${isReverse && "order-2"}`}>
-        {enTitle !== "" && (
+      {enTitle !== "" ? (
+        <article className={`${isReverse && "lg:order-2"}`}>
           <h2
             className={`${
               theme === "light" ? "text-primary-light" : "text-primary-dark"
@@ -34,11 +34,19 @@ export default function AboutParagraph({
           >
             {language === "en" ? enTitle : daTitle}
           </h2>
-        )}
-        <p className="text-[14px] font-medium whitespace-pre-line tracking-[0.84px] md:text-[18px] md:tracking-[1.08px]">
+          <p className="text-[14px] font-medium whitespace-pre-line tracking-[0.84px] md:text-[18px] md:tracking-[1.08px]">
+            {language === "en" ? enText : daText}
+          </p>
+        </article>
+      ) : (
+        <p
+          className={`text-[14px] font-medium whitespace-pre-line tracking-[0.84px] md:text-[18px] md:tracking-[1.08px] ${
+            isReverse && "lg:order-2"
+          }`}
+        >
           {language === "en" ? enText : daText}
         </p>
-      </article>
+      )}
       <Image
         src={image}
         alt="Picture of Frederik Barbre"
@@ -49,6 +57,6 @@ export default function AboutParagraph({
           theme === "light" ? "border-black/20" : "border-white/20"
         } border-[2px]`}
       />
-    </section>
+    </div>
   );
 }

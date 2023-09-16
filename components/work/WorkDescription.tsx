@@ -39,7 +39,7 @@ export default function WorkDescription({
   }
 
   return (
-    <section className="flex items-center justify-between mb-[100px] flex-col md:flex-row gap-[76px]">
+    <article className="flex items-center justify-between mb-[100px] flex-col md:flex-row gap-[76px]">
       <p className="md:max-w-[530px] text-[20px] tracking-[1.2px] whitespace-pre-line">
         {language === "en" ? enText : daText}
         {isChallenge && (
@@ -59,38 +59,32 @@ export default function WorkDescription({
         )}
       </p>
       <div className="relative">
-        <div>
-          <div className="hidden lg:block">
-            <Magnetic padding="p-0">
-              <a href={liveUrl} target="_blank">
-                <RoundButton daText="Webside" enText="Live Site" variant="lg" />
-              </a>
-            </Magnetic>
-          </div>
+        <a href={liveUrl} target="_blank">
+          <Magnetic padding="p-0">
+            <RoundButton daText="Webside" enText="Live Site" variant="lg" />
+          </Magnetic>
+        </a>
 
-          <div className="lg:hidden">
-            <a href={liveUrl} target="_blank">
-              <RoundButton daText="Webside" enText="Live Site" variant="lg" />
-            </a>
-          </div>
-        </div>
+        <span className="lg:hidden">
+          <a href={liveUrl} target="_blank">
+            <RoundButton daText="Webside" enText="Live Site" variant="lg" />
+          </a>
+        </span>
 
         <div className="absolute top-[-45%] right-[-45%] translate-x-[-50%] translate-y-[50%]">
-          <div className="hidden lg:block">
+          <a
+            href={githubUrl}
+            target="_blank"
+            className={`${
+              theme === "light" ? "bg-white" : "bg-near-black"
+            } rounded-full block hover:bg-transparent`}
+          >
             <Magnetic padding="p-0">
-              <a
-                href={githubUrl}
-                target="_blank"
-                className={`${
-                  theme === "light" ? "bg-white" : "bg-near-black"
-                } rounded-full block hover:bg-transparent`}
-              >
-                <RoundButton fill daText="Kode" enText="Code" variant="sm" />
-              </a>
+              <RoundButton fill daText="Kode" enText="Code" variant="sm" />
             </Magnetic>
-          </div>
+          </a>
 
-          <div className="lg:hidden">
+          <span className="lg:hidden">
             <a
               href={githubUrl}
               target="_blank"
@@ -100,9 +94,9 @@ export default function WorkDescription({
             >
               <RoundButton fill daText="Kode" enText="Code" variant="sm" />
             </a>
-          </div>
+          </span>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

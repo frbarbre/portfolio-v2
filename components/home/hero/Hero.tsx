@@ -66,12 +66,12 @@ export default function Hero() {
         placeholder="blur"
         className="object-cover object-center h-hero w-full"
       />
-      <div className="absolute bottom-[30px]">
-        <div ref={slider} className="relative whitespace-nowrap">
+      <h1 className="absolute bottom-[30px]">
+        <strong ref={slider} className="block relative whitespace-nowrap">
           <HeroText reference={firstText} />
           <HeroText reference={secondText} isSecondText />
-        </div>
-      </div>
+        </strong>
+      </h1>
       <ScrollCursor
         active={isCursorActive}
         animationVariant={cursorAnimation}

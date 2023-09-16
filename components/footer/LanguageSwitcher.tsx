@@ -31,7 +31,7 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <section className="font-bold text-[18px] tracking-[1.08px] cursor-pointer">
+    <article className="font-bold text-[18px] tracking-[1.08px] cursor-pointer">
       <LanguageSwitch
         handleLanguage={handleLanguage}
         lang="en"
@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
         language={language}
         theme={theme}
       />
-    </section>
+    </article>
   );
 }
 
@@ -60,7 +60,7 @@ export function LanguageSwitch({
   language: string;
 }) {
   return (
-    <span
+    <button
       onClick={() => handleLanguage(lang)}
       className={`${
         language === lang
@@ -73,6 +73,6 @@ export function LanguageSwitch({
       } transition-colors uppercase`}
     >
       {lang}
-    </span>
+    </button>
   );
 }

@@ -11,17 +11,17 @@ export default function Footer() {
         theme === 'light' ? 'border-t-black/50' : 'border-t-white/50'
       }`}
     >
-      <div className="grid grid-cols-2 lg:grid-cols-3 max-w-custom mx-auto px-sm md:px-md py-[26px]">
+      <section className="grid grid-cols-2 lg:grid-cols-3 max-w-custom mx-auto px-sm md:px-md py-[26px]">
         <LanguageSwitcher />
-        <p
+        <h6
           className={`text-[12px] font-medium tracking-[0.72px] uppercase self-center justify-self-end lg:justify-self-center ${
             theme === 'light' ? 'text-black/50' : 'text-white/50'
           }`}
         >
           © Frederik Barbrè, 2023
-        </p>
+        </h6>
         <MotionToggle />
-      </div>
+      </section>
     </footer>
   );
 }

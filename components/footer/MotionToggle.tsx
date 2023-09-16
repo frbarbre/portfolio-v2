@@ -158,18 +158,18 @@ export function Toggle({
 }) {
   return (
     <button onClick={handleMotion}>
-      <div
+      <strong
         className={`w-[53px] h-[27px] border rounded-full relative flex items-center ${
           theme === "light" ? "border-black/20" : "border-white/20"
         }`}
       >
-        <m.div
+        <m.span
           animate={localMotion ? { x: 29 } : { x: 5 }}
           className={`w-[17px] h-[17px] translate-x-[5px] rounded-full absolute flex items-center justify-center  ${
             localMotion ? "bg-emerald-500" : "bg-red-500"
           }`}
         />
-      </div>
+      </strong>
     </button>
   );
 }

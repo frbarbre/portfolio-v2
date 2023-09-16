@@ -1,9 +1,9 @@
-import BackButton from '@/components/work/BackButton';
-import ImageControls from '@/components/work/ImageControls';
-import ImageSlider from '@/components/work/ImageSlider';
-import WorkDescription from '@/components/work/WorkDescription';
-import WorkDetails from '@/components/work/WorkDetails';
-import { fetchProjects } from '@/utils/fetchProjects';
+import BackButton from "@/components/shared/BackButton";
+import ImageControls from "@/components/work/ImageControls";
+import ImageSlider from "@/components/work/ImageSlider";
+import WorkDescription from "@/components/work/WorkDescription";
+import WorkDetails from "@/components/work/WorkDetails";
+import { fetchProjects } from "@/utils/fetchProjects";
 
 export default async function Work({ params }: { params: { slug: string } }) {
   const projects = await fetchProjects();

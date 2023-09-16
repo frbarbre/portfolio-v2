@@ -12,28 +12,26 @@ export default function Skills() {
   const theme = useStore((state) => state.theme);
 
   return (
-    <section className="px-sm md:px-md md:py-[100px] py-[50px] md:pb-[100px] md:flex items-center justify-between gap-16">
-      <article>
+    <article className="px-sm md:px-md md:py-[100px] py-[50px] md:pb-[100px] md:flex items-center justify-between gap-16">
+      <div>
         <p className="max-w-[733px] text-[18px] tracking-[1.08px] text-center md:text-left whitespace-pre-line">
           <SkillsText language={language} theme={theme} />
         </p>
         <SkillIcons />
-      </article>
-
-      <div className="hidden lg:block">
-        <Magnetic>
-          <Link href={"/about"} className="hidden md:block">
-            <RoundButton enText="About Me" daText="Om Mig" />
-          </Link>
-        </Magnetic>
       </div>
 
-      <div className="lg:hidden">
+      <Magnetic>
         <Link href={"/about"} className="hidden md:block">
           <RoundButton enText="About Me" daText="Om Mig" />
         </Link>
-      </div>
-    </section>
+      </Magnetic>
+
+      <span className="lg:hidden">
+        <Link href={"/about"} className="hidden md:block">
+          <RoundButton enText="About Me" daText="Om Mig" />
+        </Link>
+      </span>
+    </article>
   );
 }
 

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { ProjectType } from '@/types';
-import Icon from '../shared/Icon';
-import { skills } from '@/constants';
-import Magnetic from '../shared/Magnetic';
-import { useState, Fragment } from 'react';
-import { useStore } from '@/app/store';
+import { ProjectType } from "@/types";
+import Icon from "../shared/Icon";
+import { skills } from "@/constants";
+import Magnetic from "../shared/Magnetic";
+import { useState, Fragment } from "react";
+import { useStore } from "@/app/store";
 
 export default function WorkDetails({
   title,
@@ -18,7 +18,7 @@ export default function WorkDetails({
   year: string;
   toolsArr: string[];
 }) {
-  const [isMouseOver, setIsMouseOver] = useState('');
+  const [isMouseOver, setIsMouseOver] = useState("");
   const language = useStore((state) => state.language);
   const theme = useStore((state) => state.theme);
 
@@ -28,65 +28,52 @@ export default function WorkDetails({
         <h1 className="text-[32px] font-bold tracking-[1.92px] md:text-[58px] md:tracking-[3.48px] uppercase pb-[7px]">
           {title}
         </h1>
-        <article className="text-[14px] font-semibold tracking-[0.84px] md:text-[24px] md:tracking-[1.44px] uppercase pb-[15px] md:pb-[18px]">
+        <h2 className="text-[14px] font-semibold tracking-[0.84px] md:text-[24px] md:tracking-[1.44px] uppercase pb-[15px] md:pb-[18px]">
           {type === ProjectType.Development ? (
-            language === 'en' ? (
-              <p>Development</p>
+            language === "en" ? (
+              "Development"
             ) : (
-              <p>Udvikling</p>
+              "Udvikling"
             )
-          ) : language === 'en' ? (
-            <p>
-              Design{' '}
+          ) : language === "en" ? (
+            <>
+              Design{" "}
               <span
                 className={
-                  theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+                  theme === "light" ? "text-primary-light" : "text-primary-dark"
                 }
               >
                 &
-              </span>{' '}
+              </span>{" "}
               Development
-            </p>
+            </>
           ) : (
-            <p>
-              Design{' '}
+            <>
+              Design{" "}
               <span
                 className={
-                  theme === 'light' ? 'text-primary-light' : 'text-primary-dark'
+                  theme === "light" ? "text-primary-light" : "text-primary-dark"
                 }
               >
                 &
-              </span>{' '}
+              </span>{" "}
               Udvikling
-            </p>
+            </>
           )}
-        </article>
+        </h2>
         {toolsArr.length !== 0 && (
-          <article className="flex items-center gap-[15px] flex-wrap">
+          <ul className="flex items-center gap-[15px] flex-wrap">
             {toolsArr.map((tool) => {
               const currentTool = skills.find((skill) => skill.id === tool);
               if (!currentTool) return null;
 
               return (
-                <div key={currentTool.id}>
-                  <div
-                    className="hidden lg:block"
-                    onMouseEnter={() => setIsMouseOver(currentTool.title)}
-                    onMouseLeave={() => setIsMouseOver('')}
-                  >
-                    <Magnetic padding="p-0">
-                      <Icon
-                        padding
-                        icon={currentTool.icon}
-                        link={currentTool.link}
-                        name={currentTool.title}
-                        isMouseOver={isMouseOver}
-                        size="w-[35px] md:w-[45px]"
-                      />
-                    </Magnetic>
-                  </div>
-
-                  <div className="lg:hidden relative">
+                <li
+                  key={currentTool.id}
+                  onMouseEnter={() => setIsMouseOver(currentTool.title)}
+                  onMouseLeave={() => setIsMouseOver("")}
+                >
+                  <Magnetic padding="p-0">
                     <Icon
                       padding
                       icon={currentTool.icon}
@@ -95,16 +82,27 @@ export default function WorkDetails({
                       isMouseOver={isMouseOver}
                       size="w-[35px] md:w-[45px]"
                     />
-                  </div>
-                </div>
+                  </Magnetic>
+
+                  <span className="lg:hidden relative block">
+                    <Icon
+                      padding
+                      icon={currentTool.icon}
+                      link={currentTool.link}
+                      name={currentTool.title}
+                      isMouseOver={isMouseOver}
+                      size="w-[35px] md:w-[45px]"
+                    />
+                  </span>
+                </li>
               );
             })}
-          </article>
+          </ul>
         )}
       </section>
-      <h4 className="text-[12px] font-bold tracking-[0.72px] md:text-[24px] md:tracking-[1.44px] md:pt-[24px]">
+      <h3 className="text-[12px] font-bold tracking-[0.72px] md:text-[24px] md:tracking-[1.44px] md:pt-[24px]">
         {year}
-      </h4>
+      </h3>
     </article>
   );
 }
