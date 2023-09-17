@@ -205,7 +205,7 @@ export const aboutParagraphs = [
       text: "As a frontend developer, my technical skills and creative abilities are complemented by my strong social competencies. I believe that digital development is about people as much as it is about code. I thrive in collaboration and cultivate a positive working environment.\n\nMy ability to understand users' needs and convey complex technical concepts makes me a bridge between technical and non-technical team members. I prioritize building strong relationships and fostering open communication.\n\nI strive to create digital solutions deeply rooted in users' real needs and desires. My social skills are essential for crafting meaningful digital experiences and sustainable collaborations.",
     },
     da: {
-      title: "Stærke sociale kompetencer",
+      title: "Stærke sociale kompetencer ",
       text: "Som frontend-udvikler er mine tekniske færdigheder og kreative evner suppleret af mine stærke sociale kompetencer. Jeg tror på, at digital udvikling handler om mennesker såvel som kode. Jeg trives i samarbejde og skaber et positivt arbejdsmiljø.\n\nMin evne til at forstå brugernes behov og formidle komplekse tekniske koncepter gør mig til en brobygger mellem teknikere og ikke-teknikere. Jeg prioriterer stærke relationer og åben kommunikation.\n\nJeg stræber efter at skabe digitale løsninger, der er forankret i brugernes virkelige behov og ønsker. Mine sociale kompetencer er afgørende for at skabe meningsfulde digitale oplevelser og bæredygtige samarbejder.",
     },
     isRevese: false,
