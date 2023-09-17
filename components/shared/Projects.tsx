@@ -83,24 +83,24 @@ export default function Projects({ projects }: { projects: Project[] }) {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.25, delay: 11 * 0.05 + 0.45 }}
           className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
-          onClick={() => setProjectsLoaded((prev) => prev + 12)}
         >
-          <div className="max-w-[236px] w-full lg:hidden">
-            <SquareButton
-              daText="Indlæs Flere"
-              enText="Load More"
-              variant="std"
-            />
-          </div>
-          <div className="max-w-[236px] w-full hidden lg:block">
-            <Magnetic>
+          <button onClick={() => setProjectsLoaded((prev) => prev + 12)} className="block max-w-[236px] w-full">
+            <span className="max-w-[236px] w-full lg:hidden">
+              <SquareButton
+                daText="Indlæs Flere"
+                enText="Load More"
+                variant="std"
+              />
+            </span>
+
+            <Magnetic width="max-w-[236px] w-full" padding="p-0">
               <SquareButton
                 daText="Indlæs Flere"
                 enText="Load More"
                 variant="std"
               />
             </Magnetic>
-          </div>
+          </button>
         </m.div>
       )}
       {pathname === "/works" && (

@@ -26,7 +26,10 @@ export default function RootLayout({
   const pathname = usePathname();
   const pathSplit = pathname.split("/");
   let title = "";
-  if (pathSplit.length > 2) {
+  if (pathname.includes("/archive")) {
+    title = `${language === "en" ? "Archive" : "Arkiv"} | `;
+  }
+  else if (pathSplit.length > 2) {
     const titleFormatted = pathSplit[2]
       .split("-")
       .map((word) => word[0].toUpperCase() + word.slice(1))
