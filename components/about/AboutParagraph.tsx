@@ -11,7 +11,7 @@ export default function AboutParagraph({
   enTitle,
   image,
 }: {
-  isReverse: boolean | undefined;
+  isReverse: boolean;
   daText: string;
   enText: string;
   daTitle: string;

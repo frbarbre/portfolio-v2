@@ -208,7 +208,7 @@ export const aboutParagraphs = [
       title: "Stærke sociale kompetencer ",
       text: "Som frontend-udvikler er mine tekniske færdigheder og kreative evner suppleret af mine stærke sociale kompetencer. Jeg tror på, at digital udvikling handler om mennesker såvel som kode. Jeg trives i samarbejde og skaber et positivt arbejdsmiljø.\n\nMin evne til at forstå brugernes behov og formidle komplekse tekniske koncepter gør mig til en brobygger mellem teknikere og ikke-teknikere. Jeg prioriterer stærke relationer og åben kommunikation.\n\nJeg stræber efter at skabe digitale løsninger, der er forankret i brugernes virkelige behov og ønsker. Mine sociale kompetencer er afgørende for at skabe meningsfulde digitale oplevelser og bæredygtige samarbejder.",
     },
-    isRevese: false,
+    isReverse: false,
     image: about3,
   },
 ];
