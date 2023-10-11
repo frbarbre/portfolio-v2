@@ -34,7 +34,7 @@ export default function StaticProjectCard({
             style={{ backgroundColor: color }}
             className="py-[60px] px-[36px]"
           >
-            <Image
+            <img
               src={`/screens/${prefix}${image}`}
               alt={title}
               width={600}

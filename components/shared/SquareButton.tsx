@@ -42,7 +42,7 @@ export default function SquareButton({ daText, enText, variant }: Props) {
     >
       {variant === "icon" && (
         <>
-          <Image
+          <img
             src={
               theme === "light"
                 ? isMouseOver
@@ -57,7 +57,7 @@ export default function SquareButton({ daText, enText, variant }: Props) {
             height={16}
             className="w-[12px] h-[11px] md:w-[16px] md:h-[15px] hidden lg:block z-20"
           />
-          <Image
+          <img
             src={theme === "light" ? "/filter-light.svg" : "/filter-dark.svg"}
             alt="filter icon"
             width={16}

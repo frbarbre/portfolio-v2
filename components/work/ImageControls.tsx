@@ -23,7 +23,7 @@ export default function ImageControls({
         className={`flex justify-between w-full px-[20px] md:px-[37px] h-full rounded-[4px] md:rounded-[8px]`}
         style={{ backgroundColor: color }}
       >
-        <Image
+        <img
           src={
             arrowColor === Arrowcolor.Black
               ? '/arrow-black.svg'
@@ -34,7 +34,7 @@ export default function ImageControls({
           height={30}
           className="w-[30px] md:w-[55px]"
         />
-        <Image
+        <img
           src={
             arrowColor === Arrowcolor.Black
               ? '/arrow-black.svg'

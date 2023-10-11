@@ -23,7 +23,7 @@ export default function Icon({
 
   return (
     <a href={link} target="_blank">
-      <Image
+      <img
         src={icon}
         alt={name}
         width={200}

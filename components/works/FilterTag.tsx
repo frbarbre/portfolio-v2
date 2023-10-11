@@ -39,7 +39,7 @@ export default function FilterTag({
           ? "framer motion"
           : name}
       </span>
-      <Image
+      <img
         src={
           theme === "light"
             ? isMouseOver
@@ -54,7 +54,7 @@ export default function FilterTag({
         height={8}
         className="hidden lg:block"
       />
-      <Image
+      <img
         src={theme === "light" ? "/cross-light.svg" : "/cross-dark.svg"}
         alt="close icon"
         width={8}

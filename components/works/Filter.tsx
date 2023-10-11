@@ -85,7 +85,7 @@ export default function Filter({
                 </button>
               </m.div>
               <button onClick={() => setIsFilterActive(false)}>
-                <Image
+                <img
                   src={
                     theme === "light" ? "/cross-light.svg" : "/cross-dark.svg"
                   }

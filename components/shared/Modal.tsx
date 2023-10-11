@@ -81,7 +81,7 @@ export default function Modal({
                 style={{ backgroundColor: color }}
                 key={`modal_${index}`}
               >
-                <Image
+                <img
                   src={`/screens/${prefix}${images[0]}`}
                   width={300}
                   height={0}

@@ -35,7 +35,7 @@ export default function CTA() {
           }`}
         >
           <div className="flex md:items-center flex-col md:flex-row md:gap-[32px] gap-[12px]">
-            <Image
+            <img
               src={"/profilepic.png"}
               alt="Frederik Barbre Picture"
               width={102}

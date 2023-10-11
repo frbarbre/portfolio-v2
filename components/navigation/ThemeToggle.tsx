@@ -46,7 +46,7 @@ export default function ThemeToggle() {
             theme === "light" ? "bg-primary-light" : "bg-primary-dark"
           }`}
         >
-          <Image
+          <img
             src={theme === "light" ? "/sun.svg" : "/moon.svg"}
             alt="theme-icon"
             width={11}

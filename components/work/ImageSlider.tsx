@@ -27,7 +27,7 @@ export default function ImageSlider({ project }: { project: Project }) {
     <div className={`relative ${theme === "light" ? "border-black/20" : "border-white/20"} border-[2px] md:border-[3px] rounded-[5px] md:rounded-[10px]`}>
       <Slider {...settings}>
         {project.acf.images.map((image) => (
-          <Image
+          <img
             src={`/screens/${project.acf.prefix}${image}`}
             alt={image}
             width={1920}

@@ -23,7 +23,7 @@ export default function BackButton({
 
   return (
     <button onClick={handleBack}>
-      <Image
+      <img
         src={theme === "light" ? "/arrow-blue.svg" : "/arrow-dark.svg"}
         alt="back-button"
         width={55}
