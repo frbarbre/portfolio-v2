@@ -14,7 +14,7 @@ export default async function Work({ params }: { params: { slug: string } }) {
 
   return (
     <div className="px-sm md:px-md max-w-custom mx-auto">
-      <BackButton isInArchive={currentProject.acf.isFeatured ? false : true} />
+      <BackButton />
       <section className="max-w-[980px] mx-auto">
         <ImageSlider project={currentProject} />
         <ImageControls

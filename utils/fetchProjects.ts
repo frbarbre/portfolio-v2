@@ -6,6 +6,5 @@ export async function fetchProjects() {
     { cache: "no-store" }
   );
   const projects = (await data.json()) as Project[];
-  
   return projects;
 }

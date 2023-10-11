@@ -2,18 +2,15 @@
 
 import { useStore } from "@/app/store";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function BackButton({
-  isInArchive,
   href,
 }: {
-  isInArchive?: boolean;
   href?: string;
 }) {
   const theme = useStore((state) => state.theme);
   const router = useRouter();
-  const pathname = usePathname();
 
   function handleBack() {
     if (href) {
