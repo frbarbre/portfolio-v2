@@ -43,9 +43,9 @@ export const navLinks = [
 ];
 
 export const skillsText = {
-  en: "I am Frederik Barbré, a profoundly enthusiastic web developer. \n\n I derive immense joy from crafting distinctive and captivating designs and then bringing them to life through development. My proficiency spans across a broad spectrum of industry-standard JavaScript frontend technologies:",
+  en: "I am Frederik Barbré, a profoundly enthusiastic web developer. \n\n I derive immense joy from crafting distinctive and captivating designs and then bringing them to life through development. My proficiency spans across a broad spectrum of industry-standard JavaScript frontend & fullstack technologies:",
 
-  da: "Jeg hedder Frederik Barbré, og jeg er en en dybt engageret webudvikler. \n\n Jeg finder stor glæde ved at skabe distinkte og fængslende design og derefter bringe dem til live gennem kodning. Min ekspertise strækker sig over en bred vifte af JavaScript frontend-teknologier:",
+  da: "Jeg hedder Frederik Barbré, og jeg er en en dybt engageret webudvikler. \n\n Jeg finder stor glæde ved at skabe distinkte og fængslende design og derefter bringe dem til live gennem kodning. Min ekspertise strækker sig over en bred vifte af JavaScript frontend & fullstack teknologier:",
 };
 
 export const skills = [
@@ -68,7 +68,7 @@ export const skills = [
     icon: "/tools/svelte.svg",
     id: Tools.svelte,
     link: "https://svelte.dev/",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     title: "Astro",
@@ -138,7 +138,7 @@ export const skills = [
     icon: "/tools/mongodb.svg",
     id: Tools.mongodb,
     link: "https://www.mongodb.com/",
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     title: "Zustand",
