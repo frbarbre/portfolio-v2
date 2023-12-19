@@ -75,7 +75,7 @@ export const skills = [
     icon: "/tools/astro.svg",
     id: Tools.astro,
     link: "https://astro.build/",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     title: "TypeScript",
@@ -132,6 +132,13 @@ export const skills = [
     id: Tools.graphql,
     link: "https://graphql.org/",
     isFeatured: false,
+  },
+  {
+    title: "Supabase",
+    icon: "/tools/supabase.svg",
+    id: Tools.supabase,
+    link: "https://supabase.com/",
+    isFeatured: true,
   },
   {
     title: "MongoDB",
