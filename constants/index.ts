@@ -314,6 +314,11 @@ export const filtersData = [
         da: "GSAP",
       },
       {
+        id: Tools.supabase,
+        en: "Supabase",
+        da: "Supabase",
+      },
+      {
         id: Tools.mongodb,
         en: "MongoDB",
         da: "MongoDB",
