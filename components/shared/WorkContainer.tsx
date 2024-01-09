@@ -14,6 +14,7 @@ import { skills } from "@/constants";
 import NotFound from "../works/NotFound";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import BackButton from "./BackButton";
+import { removeDuplicates } from "@/utils/removeDuplicates";
 
 export default function WorksContainer({
   projects,
@@ -32,12 +33,17 @@ export default function WorksContainer({
   const [isFilterActive, setIsFilterActive] = useState(false);
   const [filters, setFilters] = useState<string[]>(filterParams || []);
 
+  const projectToolIds = projects.map((project) => project.acf.tools);
+  const projectTools = projectToolIds.flat();
+  const projectToolsArr = projectTools.map((tool) => tool);
+  const projectToolsIdArr = removeDuplicates(projectToolsArr);
+
   const allFilters = [
     Catagory.Frontend,
     Catagory.Fullstack,
     ProjectType.DesignDevelopment,
     ProjectType.Development,
-    ...skills.map((skill) => skill.id),
+    ...projectToolsIdArr,
   ];
 
   useEffect(() => {
@@ -116,6 +122,7 @@ export default function WorksContainer({
           filters={filters}
           handleAdd={handleAdd}
           handleReset={handleReset}
+          projectToolsIdArr={projectToolsIdArr}
         />
       </section>
       <div className="min-h-[42.8px] md:mb-[32px] mb-[20px] flex gap-[12px] lg:gap-sm mx-[24px] md:mx-[103px] flex-wrap">

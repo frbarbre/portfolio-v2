@@ -1,6 +1,5 @@
 import { useStore } from "@/app/store";
 import { filtersData } from "@/constants";
-import Image from "next/image";
 import FilterChoice from "./FilterChoice";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { FilterSearchParams } from "@/types";
@@ -12,6 +11,7 @@ export default function Filter({
   handleAdd,
   handleReset,
   searchParams,
+  projectToolsIdArr,
 }: {
   isFilterActive: boolean;
   setIsFilterActive: Function;
@@ -19,6 +19,7 @@ export default function Filter({
   handleAdd: (filter: string) => void;
   handleReset: () => void;
   searchParams?: FilterSearchParams;
+  projectToolsIdArr: string[];
 }) {
   const theme = useStore((state) => state.theme);
   const language = useStore((state) => state.language);
@@ -63,15 +64,20 @@ export default function Filter({
                       </h2>
                       <ul className="flex gap-[20px] lg:gap-y-[40px] flex-col flex-wrap md:max-h-[332px] lg:max-h-[480px]">
                         {filter.choices.map((choice) => (
-                          <FilterChoice
-                            daText={choice.da}
-                            enText={choice.en}
-                            id={choice.id}
-                            filters={filters}
-                            handleAdd={handleAdd}
-                            isRadio={masterIndex !== 2}
-                            key={choice.id}
-                          />
+                          <>
+                            {(projectToolsIdArr.includes(choice.id) ||
+                              masterIndex !== 2) && (
+                              <FilterChoice
+                                daText={choice.da}
+                                enText={choice.en}
+                                id={choice.id}
+                                filters={filters}
+                                handleAdd={handleAdd}
+                                isRadio={masterIndex !== 2}
+                                key={choice.id}
+                              />
+                            )}
+                          </>
                         ))}
                       </ul>
                     </li>
