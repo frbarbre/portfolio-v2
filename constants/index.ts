@@ -161,6 +161,55 @@ export const skills = [
     link: "https://www.framer.com/motion/",
     isFeatured: true,
   },
+  {
+    title: "trpc",
+    icon: "/tools/trpc.svg",
+    id: Tools.trpc,
+    link: "https://trpc.io/",
+    isFeatured: false,
+  },
+  {
+    title: "Prisma",
+    icon: "/tools/prisma.svg",
+    id: Tools.prisma,
+    link: "https://www.prisma.io/",
+    isFeatured: false,
+  },
+  {
+    title: "OpenAI",
+    icon: "/tools/openai.svg",
+    id: Tools.openai,
+    link: "https://platform.openai.com/docs/introduction",
+    isFeatured: false,
+  },
+  {
+    title: "Stripe",
+    icon: "/tools/stripe.svg",
+    id: Tools.stripe,
+    link: "https://stripe.com/",
+    isFeatured: false,
+  },
+  {
+    title: "Kinde",
+    icon: "/tools/kinde.svg",
+    id: Tools.kinde,
+    link: "https://kinde.com/",
+    isFeatured: false,
+  },
+  {
+    title: "Zod",
+    icon: "/tools/zod.svg",
+    id: Tools.zod,
+    link: "https://zod.dev/",
+    isFeatured: false,
+  },
+  {
+    title: "shadcn/ui",
+    icon: "/tools/shadcn.svg",
+    id: Tools.shadcn,
+    link: "https://ui.shadcn.com/",
+    isFeatured: false,
+  },
 ];
 
 export const socials = [
@@ -262,82 +311,12 @@ export const filtersData = [
       en: "Tools",
       da: "Værktøjer",
     },
-    choices: [
-      {
-        id: Tools.react,
-        en: "React",
-        da: "React",
-      },
-      {
-        id: Tools.next,
-        en: "Next.JS",
-        da: "Next.JS",
-      },
-      {
-        id: Tools.tailwind,
-        en: "Tailwind CSS",
-        da: "Tailwind CSS",
-      },
-      {
-        id: Tools.typescript,
-        en: "TypeScript",
-        da: "TypeScript",
-      },
-      {
-        id: Tools.javascript,
-        en: "JavaScript",
-        da: "JavaScript",
-      },
-      {
-        id: Tools.svelte,
-        en: "Svelte",
-        da: "Svelte",
-      },
-      {
-        id: Tools.astro,
-        en: "Astro",
-        da: "Astro",
-      },
-      {
-        id: Tools.zustand,
-        en: "Zustand",
-        da: "Zustand",
-      },
-      {
-        id: Tools.framermotion,
-        en: "Framer Motion",
-        da: "Framer Motion",
-      },
-      {
-        id: Tools.gsap,
-        en: "GSAP",
-        da: "GSAP",
-      },
-      {
-        id: Tools.mongodb,
-        en: "MongoDB",
-        da: "MongoDB",
-      },
-      {
-        id: Tools.graphql,
-        en: "GraphQL",
-        da: "GraphQL",
-      },
-      {
-        id: Tools.threejs,
-        en: "Three.js",
-        da: "Three.js",
-      },
-      {
-        id: Tools.scss,
-        en: "Sass",
-        da: "Sass",
-      },
-      {
-        id: Tools.clerk,
-        en: "Clerk",
-        da: "Clerk",
-      },
-    ],
+    choices: skills.map((skill) => {
+      return {
+        id: skill.id,
+        en: skill.title,
+        da: skill.title,
+      };
+    }),
   },
 ];

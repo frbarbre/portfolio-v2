@@ -39,6 +39,13 @@ export enum Tools {
   scss = "scss",
   clerk = "clerk",
   supabase = "supabase",
+  trpc = "trpc",
+  prisma = "prisma",
+  openai = "openai",
+  stripe = "stripe",
+  kinde = "kinde",
+  zod = "zod",
+  shadcn = "shadcn/ui",
 }
 
 export enum Arrowcolor {
