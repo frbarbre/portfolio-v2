@@ -39,7 +39,7 @@ export enum Tools {
   scss = "scss",
   clerk = "clerk",
   supabase = "supabase",
-  trpc = "trpc",
+  trpc = "tRPC",
   prisma = "prisma",
   openai = "openai",
   stripe = "stripe",
