@@ -61,7 +61,7 @@ export default function Filter({
                       >
                         {language === "en" ? filter.title.en : filter.title.da}
                       </h2>
-                      <ul className="flex gap-[20px] lg:gap-y-[40px] flex-col flex-wrap md:max-h-[332px]">
+                      <ul className="flex gap-[20px] lg:gap-y-[40px] flex-col flex-wrap md:max-h-[332px] lg:max-h-[480px]">
                         {filter.choices.map((choice) => (
                           <FilterChoice
                             daText={choice.da}
