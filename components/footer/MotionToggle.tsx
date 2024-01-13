@@ -43,7 +43,7 @@ export default function MotionToggle() {
     if (motion === localMotion.toString()) {
       setTimeLeft({ isActive: false, time: 0 });
     }
-  }, [localMotion])
+  }, [localMotion]);
 
   function handleMotion() {
     setLocalMotion(!localMotion);
@@ -92,7 +92,7 @@ export default function MotionToggle() {
         theme={theme}
       />
       <Reload
-        enText="A reload is required when switch motion."
+        enText="A reload is required when switching motion."
         daText="En genindlæsning er påkrævet, når du skifter animationer."
         handleSubmit={handleSubmit}
         timeLeft={timeLeft.time}
