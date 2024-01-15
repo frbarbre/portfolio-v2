@@ -1,7 +1,7 @@
 import { navLinks } from "@/constants";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/shared/Link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useStore } from "@/app/store";
@@ -49,6 +49,9 @@ export default function NavMenu({ isActive, setIsActive, theme }: Props) {
                       key={link.title.en}
                     >
                       <Link
+                        routeName={
+                          language === "en" ? link.title.en : link.title.da
+                        }
                         href={`/${link.path}`}
                         onClick={() => setIsActive(false)}
                         onMouseEnter={() => setIsMouseOver(link.title.en)}

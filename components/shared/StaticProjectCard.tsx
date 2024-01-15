@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion as m, AnimatePresence } from 'framer-motion';
+import Link from "@/components/shared/Link";
+import { motion as m } from "framer-motion";
 
 interface Props {
   slug: string;
@@ -28,7 +27,7 @@ export default function StaticProjectCard({
       exit={{ opacity: 0, y: -20 }}
       transition={{ delay: index * 0.05 + 0.45, duration: 0.25 }}
     >
-      <Link href={`/works/${slug}`}>
+      <Link routeName={title} href={`/${slug}`} className="w-full">
         <div className="w-full flex flex-col justify-center">
           <div
             style={{ backgroundColor: color }}

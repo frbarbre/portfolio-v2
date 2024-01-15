@@ -6,11 +6,12 @@ import ThemeToggle from "./ThemeToggle";
 import MenuToggle from "./MenuToggle";
 import NavMenu from "./NavMenu";
 import { motion as m, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import Link from "@/components/shared/Link";
 
 export default function Navbar() {
   const theme = useStore((state) => state.theme);
   const [isActive, setIsActive] = useState(false);
+  const language = useStore((state) => state.language);
 
   return (
     <>
@@ -25,6 +26,7 @@ export default function Navbar() {
           className={`max-w-custom mx-auto grid grid-cols-2 h-[77px] md:grid-cols-3 items-center px-navbar-inline xl:px-md py-[22px]`}
         >
           <Link
+            routeName={language === "en" ? "Home" : "Hjem"}
             href={"/"}
             onClick={() => setIsActive(false)}
             className="font-bold text-[22px] tracking-[1.32px] w-max hidden md:block"

@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://frederikbarbre.dk/works/archive',
+      url: 'https://frederikbarbre.dk/archive',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

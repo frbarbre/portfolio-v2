@@ -3,6 +3,7 @@ import { filtersData } from "@/constants";
 import FilterChoice from "./FilterChoice";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { FilterSearchParams } from "@/types";
+import { Fragment } from "react";
 
 export default function Filter({
   isFilterActive,
@@ -64,7 +65,7 @@ export default function Filter({
                       </h2>
                       <ul className="flex gap-[20px] lg:gap-y-[40px] flex-col flex-wrap md:max-h-[332px] lg:max-h-[480px]">
                         {filter.choices.map((choice) => (
-                          <>
+                          <Fragment key={choice.id}>
                             {(projectToolsIdArr.includes(choice.id) ||
                               masterIndex !== 2) && (
                               <FilterChoice
@@ -77,7 +78,7 @@ export default function Filter({
                                 key={choice.id}
                               />
                             )}
-                          </>
+                          </Fragment>
                         ))}
                       </ul>
                     </li>

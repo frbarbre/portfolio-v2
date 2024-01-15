@@ -7,7 +7,7 @@ import Modal from "./Modal";
 import StaticProjectCard from "./StaticProjectCard";
 import { usePathname } from "next/navigation";
 import { useStore } from "@/app/store";
-import Link from "next/link";
+import Link from "@/components/shared/Link";
 import SquareButton from "./SquareButton";
 import Magnetic from "./Magnetic";
 import { motion as m } from "framer-motion";
@@ -84,7 +84,10 @@ export default function Projects({ projects }: { projects: Project[] }) {
           transition={{ duration: 0.25, delay: 11 * 0.05 + 0.45 }}
           className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer"
         >
-          <button onClick={() => setProjectsLoaded((prev) => prev + 12)} className="block max-w-[236px] w-full">
+          <button
+            onClick={() => setProjectsLoaded((prev) => prev + 12)}
+            className="block max-w-[236px] w-full"
+          >
             <span className="max-w-[236px] w-full lg:hidden">
               <SquareButton
                 daText="Indlæs Flere"
@@ -105,7 +108,8 @@ export default function Projects({ projects }: { projects: Project[] }) {
       )}
       {pathname === "/works" && (
         <Link
-          href={"/works/archive"}
+          routeName={language === "en" ? "Archive" : "Arkiv"}
+          href={"/archive"}
           className="mt-[30px] md:mt-[50px] w-full flex justify-center cursor-pointer max-w-[236px] mx-auto"
         >
           <span className="w-full lg:hidden">
@@ -130,13 +134,21 @@ export default function Projects({ projects }: { projects: Project[] }) {
       {pathname === "/" && (
         <div className="mt-[46px] mb-[100px] max-w-[254px] mx-auto">
           <Magnetic>
-            <Link href={"/works"} className="w-full block">
+            <Link
+              href={"/works"}
+              routeName={language === "en" ? "works" : "projekter"}
+              className="w-full block"
+            >
               <SquareButton enText="Show All" daText="Se Alle" variant="std" />
             </Link>
           </Magnetic>
 
           <span className="lg:hidden mt-[49px] mb-[100px] max-w-[254px] mx-auto">
-            <Link href={"/works"} className="w-full block">
+            <Link
+              href={"/works"}
+              routeName={language === "en" ? "works" : "projekter"}
+              className="w-full block"
+            >
               <SquareButton enText="Show All" daText="Se Alle" variant="std" />
             </Link>
           </span>

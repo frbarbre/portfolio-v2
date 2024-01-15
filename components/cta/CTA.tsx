@@ -1,11 +1,10 @@
 import { useStore } from "@/app/store";
 import { socials } from "@/constants";
-import Image from "next/image";
 import Magnetic from "../shared/Magnetic";
 import Icon from "../shared/Icon";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/shared/Link";
 import SquareButton from "../shared/SquareButton";
 import RoundButton from "../shared/RoundButton";
 
@@ -89,6 +88,7 @@ export default function CTA() {
               </p>
 
               <Link
+                routeName={language === "en" ? "contact" : "kontakt"}
                 href={"/contact"}
                 className="md:hidden mx-auto max-w-[254px] w-full"
               >
@@ -99,7 +99,11 @@ export default function CTA() {
                 />
               </Link>
 
-              <Link href={"/contact"} className="hidden md:block lg:hidden">
+              <Link
+                routeName={language === "en" ? "contact" : "kontakt"}
+                href={"/contact"}
+                className="hidden md:block lg:hidden"
+              >
                 <RoundButton
                   daText="Kontakt Mig"
                   enText="Contact Me"
@@ -107,7 +111,10 @@ export default function CTA() {
                 />
               </Link>
 
-              <Link href={"/contact"}>
+              <Link
+                routeName={language === "en" ? "contact" : "kontakt"}
+                href={"/contact"}
+              >
                 <Magnetic padding="p-0">
                   <RoundButton
                     daText="Kontakt Mig"

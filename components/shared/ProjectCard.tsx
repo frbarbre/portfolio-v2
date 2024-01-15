@@ -1,8 +1,8 @@
 "use client";
 
 import { useStore } from "@/app/store";
-import Link from "next/link";
-import { motion as m, AnimatePresence } from "framer-motion";
+import Link from "@/components/shared/Link";
+import { motion as m } from "framer-motion";
 
 export default function ProjectCard({
   index,
@@ -31,7 +31,8 @@ export default function ProjectCard({
       className="w-full"
     >
       <Link
-        href={`/works/${slug}`}
+        routeName={title}
+        href={`/${slug}`}
         onMouseEnter={() => {
           setModal({ active: true, index });
         }}

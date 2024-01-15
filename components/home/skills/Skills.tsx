@@ -3,7 +3,7 @@
 import { useStore } from "@/app/store";
 import { skillsText } from "@/constants";
 import RoundButton from "../../shared/RoundButton";
-import Link from "next/link";
+import Link from "@/components/shared/Link";
 import SkillIcons from "./SkillIcons";
 import Magnetic from "@/components/shared/Magnetic";
 
@@ -21,13 +21,21 @@ export default function Skills() {
       </div>
 
       <Magnetic>
-        <Link href={"/about"} className="hidden md:block">
+        <Link
+          routeName={language === "en" ? "about" : "om mig"}
+          href={"/about"}
+          className="hidden md:block"
+        >
           <RoundButton enText="About Me" daText="Om Mig" />
         </Link>
       </Magnetic>
 
       <span className="lg:hidden">
-        <Link href={"/about"} className="hidden md:block">
+        <Link
+          routeName={language === "en" ? "about" : "om mig"}
+          href={"/about"}
+          className="hidden md:block"
+        >
           <RoundButton enText="About Me" daText="Om Mig" />
         </Link>
       </span>
