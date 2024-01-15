@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { animatePageOut } from "@/animations";
 import { ReactNode } from "react";
 import { useRouteStore, useStore } from "@/app/store";
+import useScreenSize from "@/hooks/useScreenSize";
 
 export default function TransitionLink({
   href,
@@ -28,11 +29,14 @@ export default function TransitionLink({
   const pathname = usePathname();
   const setRoute = useRouteStore((state) => state.setRoute);
   const motion = useStore((state) => state.motion);
+  const screenSize = useScreenSize();
+
+  const isMobile = screenSize.width < 815;
 
   const handleClick = () => {
     if (onClick) onClick();
     if (pathname !== href) {
-      if (motion === "true") {
+      if (motion === "true" && !isMobile) {
         animatePageOut(href, router, isBack);
         setRoute(routeName);
       } else {
