@@ -17,7 +17,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     if (motion === "true" && !isMobile) {
       animatePageIn();
     }
-  }, []);
+  }, [motion]);
 
   return (
     <div>
