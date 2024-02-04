@@ -106,7 +106,7 @@ export default function RootLayout({
         className={`${barlow.className} ${
           theme === "light"
             ? "text-near-black bg-white"
-            : "bg-near-black text-white"
+            : "bg-near-black text-white dark"
         } transition-colors`}
       >
         {isClient && (

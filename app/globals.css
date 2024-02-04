@@ -2,3 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  background: #2764ff;
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  width: 5px;
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2764ff;
+  border-radius: 20px;
+  width: 5px;
+  height: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2764ff;
+}
+
+/*-------- DARK MODE SCROLLBAR --------*/
+
+/* width */
+html:has(.dark) ::-webkit-scrollbar {
+  background: #ffd02a;
+}
+
+/* Track - Scrollbar "background" */
+html:has(.dark) ::-webkit-scrollbar-track {
+  background: rgba(14, 14, 14, 1);
+}
+
+/* Handle */
+html:has(.dark) ::-webkit-scrollbar-thumb {
+  background: #ffd02a;
+}
+
+/* Handle on hover */
+html:has(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #ffd02a;
+}
