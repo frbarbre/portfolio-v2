@@ -18,7 +18,6 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #2764ff;
-  border-radius: 20px;
   width: 5px;
   height: 5px;
 }
