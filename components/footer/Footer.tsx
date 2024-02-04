@@ -18,7 +18,7 @@ export default function Footer() {
             theme === 'light' ? 'text-black/50' : 'text-white/50'
           }`}
         >
-          © Frederik Barbrè, 2023
+          © Frederik Barbrè, 2024
         </h6>
         <MotionToggle />
       </section>
