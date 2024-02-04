@@ -210,6 +210,20 @@ export const skills = [
     link: "https://ui.shadcn.com/",
     isFeatured: false,
   },
+  {
+    title: "Fabric.js",
+    icon: "/tools/fabric.svg",
+    id: Tools.fabric,
+    link: "http://fabricjs.com/docs/",
+    isFeatured: false,
+  },
+  {
+    title: "Liveblocks",
+    icon: "/tools/liveblocks.svg",
+    id: Tools.liveblocks,
+    link: "https://liveblocks.io/",
+    isFeatured: false,
+  }
 ];
 
 export const socials = [
